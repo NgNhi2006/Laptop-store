@@ -5,7 +5,7 @@
   font-family: "Roboto", sans-serif;
 }
 #account {
-  margin-left: 25px; /* tạo khoảng cách rộng hơn với giỏ hàng */
+  margin-left: 25px; 
   display: inline-block;
 }
 
@@ -18,7 +18,7 @@
 
 #account a i {
   margin-right: 5px;
-  color: #007bff; /* icon màu xanh */
+  color: #007bff; 
 }
 
 #account a:hover {
@@ -1906,4 +1906,3 @@ footer {
   box-shadow: 0 8px 24px #007bff44;
   transform: scale(1.08);
 }
-
