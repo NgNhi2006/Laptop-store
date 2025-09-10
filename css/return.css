@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* anh nhi css */
+#content-text {
+  max-width: 900px;
+  margin: 100px auto 40px;
+  padding: 20px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  text-align: justify;
+}
+
+#content-text h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#content-text h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+#content-text p {
+  margin: 10px 0;
+}
+
+#content-text ul {
+  margin: 10px 0 20px 30px;
+}
+
+#content-text li {
+  margin-bottom: 8px;
+}
+
+/* ghim footer xuống cuối trình duyệt */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#main {
+  flex: 1;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+}
