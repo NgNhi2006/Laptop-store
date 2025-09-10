@@ -1,0 +1,45 @@
+/* Khung chính */
+.policy-container {
+    max-width: 1200px;     /* khung rộng hơn */
+    margin: 40px auto;     /* căn giữa */
+    padding: 0 30px;       /* khoảng cách 2 bên */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    line-height: 1.8;      /* giãn dòng thoáng */
+    font-size: 15px;
+    background: #fff;      /* nền trắng */
+}
+
+/* Tiêu đề chính */
+.policy-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #222;
+    text-align: left;  /* căn trái */
+}
+
+/* Tiêu đề phụ */
+.policy-container h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 25px 0 12px;
+    color: #333;
+}
+
+/* Đoạn văn */
+.policy-container p {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Danh sách gạch đầu dòng */
+.policy-container ul {
+    margin: 10px 0 20px 35px;
+    list-style-type: disc;
+}
+
+/* Item trong danh sách */
+.policy-container li {
+    margin-bottom: 8px;
+}
