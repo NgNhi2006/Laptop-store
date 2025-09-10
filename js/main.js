@@ -408,26 +408,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const addToCartButton = document.querySelector(".add-to-cart");
 
   addToCartButton.addEventListener("click", () => {
-      const product = {
-          title: document.querySelector(".product-title").innerText,
-          price: document.querySelector(".product-price").innerText.replace('Giá: ', ''),
-          image: document.querySelector(".main-image").getAttribute('src'),
-          quantity: 1
-      };
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    
-      const existingProductIndex = cartItems.findIndex(item => item.title === product.title);
-      if (existingProductIndex !== -1) {
-          cartItems[existingProductIndex].quantity += 1;
-      } else {
+    const product = {
+      title: document.querySelector(".product-title").innerText,
+      price: document
+        .querySelector(".product-price")
+        .innerText.replace("Giá: ", ""),
+      image: document.querySelector(".main-image").getAttribute("src"),
+      quantity: 1,
+    };
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-          cartItems.push(product);
-      }
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    const existingProductIndex = cartItems.findIndex(
+      (item) => item.title === product.title
+    );
+    if (existingProductIndex !== -1) {
+      cartItems[existingProductIndex].quantity += 1;
+    } else {
+      cartItems.push(product);
+    }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
-      document.getElementById("popupContainer").style.display = "block";
-      document.querySelector(".popup-content").textContent =
-        "Sản phẩm đã được thêm vào giỏ hàng!";
+    document.getElementById("popupContainer").style.display = "block";
+    document.querySelector(".popup-content").textContent =
+      "Sản phẩm đã được thêm vào giỏ hàng!";
   });
 });
 
@@ -436,11 +439,13 @@ document.querySelector(".checkout").addEventListener("click", function () {
   document.querySelector(".popup-content").textContent =
     "Chuyển đến trang thanh toán.";
 });
-document.querySelector(".submit-review-button").addEventListener("click", function () {
-  document.getElementById("popupContainer").style.display = "block";
-  document.querySelector(".popup-content").textContent =
-    "Chúng tôi đã ghi nhận đánh giá của bạn.";
-});
+document
+  .querySelector(".submit-review-button")
+  .addEventListener("click", function () {
+    document.getElementById("popupContainer").style.display = "block";
+    document.querySelector(".popup-content").textContent =
+      "Chúng tôi đã ghi nhận đánh giá của bạn.";
+  });
 function closePopup() {
   document.getElementById("popupContainer").style.display = "none";
 }
@@ -449,7 +454,9 @@ function closePopup() {
 let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -464,5 +471,3 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
