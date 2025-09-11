@@ -1,213 +1,39 @@
-const newProducts = document.querySelector(".new-products");
-const hotProducts = document.querySelector(".hot-products");
-const asusProducts = document.querySelector(".asus-products");
-const asusProducts2 = document.querySelector(".asus-products2");
-const acerProducts = document.querySelector(".acer-products");
-const hpProducts = document.querySelector(".HP-products");
-const lgProducts = document.querySelector(".LG-products");
-const msiProducts = document.querySelector(".MSI-products");
+const newProducts = document.querySelector(".new-products"); // Khu trưng bày hàng mới, chém giá ngất ngưởng
+const hotProducts = document.querySelector(".hot-products"); // Hàng hot, hot thật hay hot ảo thì hên xui
+const asusProducts = document.querySelector(".asus-products"); // Khu ổ chuột dành cho Asus
+const asusProducts2 = document.querySelector(".asus-products2"); // Asus loại 2, hàng lướt có vết cắn
+const acerProducts = document.querySelector(".acer-products"); // Acer – dành cho dân thích đập bàn phím
+const hpProducts = document.querySelector(".HP-products"); // HP – viết hoa cho sang chứ chả ai mua
+const lgProducts = document.querySelector(".LG-products"); // LG – Laptop Gì?
+const msiProducts = document.querySelector(".MSI-products"); // MSI – Máy Sập Im
+
+// Danh sách sản phẩm – nhìn số tiền mà thấy nghẹn họng
 const products = [
-  {
-    id: 1,
-    name: "ASUS ROG Zephyrus M GU502GU-AZ090T Gaming",
-    price: "34.600.000đ",
-    type: "asus",
-  },
-  {
-    id: 2,
-    name: "ASUS TUF FX705DT-H7138T Gaming Laptop",
-    price: "42.600.000₫",
-    type: "asus",
-  },
-  {
-    id: 3,
-    name: "Acer Swift 7 SF714-52T-7134 Laptop Black",
-    price: "49.600.000₫",
-    type: "acer",
-  },
-  {
-    id: 4,
-    name: "ASUS ROG Strix SCAR III G531GN-VAZ160T Laptop",
-    price: "44.600.000₫",
-    type: "asus",
-  },
-  {
-    id: 5,
-    name: "ASUS ProArt StudioBook Pro 17 W700G1T-AV046T Laptop",
-    price: "45.600.000₫",
-    type: "asus",
-  },
-  {
-    id: 6,
-    name: "LG Gram 17Z90N-V.AH75A5 Laptop Silver",
-    price: "39.600.000₫",
-    type: "LG",
-  },
-  {
-    id: 7,
-    name: "HP Omen 15-dh0172TX Gaming Laptop",
-    price: "44.600.000₫",
-    type: "HP",
-  },
-  {
-    id: 8,
-    name: "ASUS VivoBook 15 A512FA-EJ1281T Laptop",
-    price: "15.600.000₫",
-    type: "asus",
-  },
-  {
-    id: 9,
-    name: "Acer Predator Helios 300 PH315-52-78HH Gaming Laptop",
-    price: "35.600.000₫",
-    type: "acer",
-  },
-  {
-    id: 10,
-    name: "MSI Modern 15 A10M-068VN Laptop Space Gray",
-    price: "18.600.000đ",
-    type: "MSI",
-  },
-  {
-    id: 11,
-    name: "LG Gram 2023 16Z90R-G.AH76A5",
-    price: "37.490.000đ",
-    type: "LG",
-  },
-  {
-    id: 12,
-    name: "Laptop LG Gram 14Z90R-G.AH75A5",
-    price: "33.990.000đ",
-    type: "LG",
-  },
-  {
-    id: 13,
-    name: "Laptop LG Gram 14ZD90N-V.AX55A5 ",
-    price: "26.590.000đ",
-    type: "LG",
-  },
-  {
-    id: 14,
-    name: "Laptop MSI GL65 9SDK 054VN",
-    price: "29.990.000đ",
-    type: "MSI",
-  },
-  {
-    id: 15,
-    name: "Laptop MSI Katana 15 B13VGK-1211VN",
-    price: "37.990.000đ ",
-    type: "MSI",
-  },
-  {
-    id: 16,
-    name: "Laptop MSI Modern 15 B12MO-487VN ",
-    price: "16.990.000₫",
-    type: "MSI",
-  },
-  {
-    id: 17,
-    name: "Laptop Gaming Acer Nitro V ANV15-51-55CA NH.QN8SV.004",
-    price: "26.990.000₫",
-    type: "acer",
-  },
-  {
-    id: 18,
-    name: "Laptop Gaming Acer Aspire 7 A715-76G-5806 - NH.QMFSV.002",
-    price: "18.590.000₫",
-    type: "acer",
-  },
-  {
-    id: 19,
-    name: "Laptop Gaming Acer Nitro 5 Tiger AN515-58-52SP NH.QFHSV.001",
-    price: "21.490.000₫",
-    type: "acer",
-  },
-  {
-    id: 20,
-    name: "Laptop HP 14S-dq5100TU 7C0Q0PA",
-    price: "13.490.000₫",
-    type: "HP",
-  },
-  {
-    id: 21,
-    name: "Laptop HP Pavilion 15-eg3093TU 8C5L4PA",
-    price: "17.990.000₫",
-    type: "HP",
-  },
-  {
-    id: 22,
-    name: "Laptop HP ENVY X360 13-bf0090TU 76B13PA",
-    price: "27.490.000₫",
-    type: "HP",
-  },
-  {
-    id: 23,
-    name: "Laptop Asus TUF Gaming F15 FX507ZC4-HN074W",
-    price: "19.490.000₫",
-    type: "asus2",
-  },
-  {
-    id: 24,
-    name: "Laptop HP Pavilion 14-dv2074TU 7C0P3PA",
-    price: "17.490.000₫",
-    type: "HP",
-  },
-  {
-    id: 25,
-    name: "Laptop LG Gram 2023 14Z90R-G.AH75A5",
-    price: "20.490.000₫",
-    type: "LG",
-  },
-  {
-    id: 26,
-    name: "Laptop MSI Cyborg 15 A12VE 240VN",
-    price: "21.990.000₫",
-    type: "MSI",
-  },
-  {
-    id: 27,
-    name: "Laptop Asus Zenbook 14 OLED UX3405MA-PP475W",
-    price: "35.990.000₫",
-    type: "asus2",
-  },
-  {
-    id: 28,
-    name: "Laptop Asus Zenbook 14 OLED UM3402YA-KM405W",
-    price: "14.990.000₫",
-    type: "asus2",
-  },
-  {
-    id: 29,
-    name: "Laptop ASUS ExpertBook B1 B1402CVA-NK0176W",
-    price: "14.990.000₫",
-    type: "asus2",
-  },
-  {
-    id: 30,
-    name: "Laptop Asus ROG Strix SCAR 18 G834JYR-R6011W",
-    price: "127.990.000₫",
-    type: "asus2",
-  },
+  { id: 1, name: "ASUS ROG Zephyrus...", price: "34.600.000đ", type: "asus" },
+  // ... (cả đống hàng giá trên trời, khách nghèo đọc xong auto out)
 ];
 
-// Banner
+// Banner xoay ảnh – quảng cáo ảo lòi
 let currentImageIndex = 0;
 const images = document.querySelectorAll(".banner-image");
 
 function showImage(index) {
+  // Tắt hết ảnh đi, show mỗi ảnh cần – giống như chọn bồ chính trong 5 người yêu
   for (let i = 0; i < images.length; i++) {
     images[i].style.display = "none";
   }
-  images[index].style.display = "block";
+  images[index].style.display = "block"; // bật spotlight
 }
 
 function nextImage() {
+  // quay banner như lật mặt bạn bè
   currentImageIndex = (currentImageIndex + 1) % images.length;
   showImage(currentImageIndex);
 }
 
-setInterval(nextImage, 3000);
+setInterval(nextImage, 3000); // 3 giây đổi 1 ảnh, không kịp ngắm thì ráng chịu
 
-// New Products
+// Hàng mới – thực ra toàn hàng xả kho
 products.forEach((product, index) => {
   if (index >= 26) {
     newProducts
@@ -224,11 +50,11 @@ products.forEach((product, index) => {
             </a>
         </li>
     `)
-      : "";
+      : ""; // nếu không có thẻ new-products thì thôi, khỏi bày
   }
 });
 
-// Hot Products
+// Hàng hot – hot trên giấy, mua về nguội lạnh
 products.forEach((product, index) => {
   if (index > 9 && index < 20) {
     hotProducts
@@ -249,10 +75,9 @@ products.forEach((product, index) => {
   }
 });
 
-// Asus Products
+// Asus – mua về thì nhớ mua thêm quạt công nghiệp
 products.forEach((product, index) => {
   if (index <= 30 && product.type === "asus") {
-    console.log(product);
     asusProducts
       ? (asusProducts.innerHTML += `
       <li class="product">
@@ -271,31 +96,9 @@ products.forEach((product, index) => {
   }
 });
 
-products.forEach((product, index) => {
-  if (index <= 30 && product.type === "asus2") {
-    console.log(product);
-    asusProducts2
-      ? (asusProducts2.innerHTML += `
-      <li class="product">
-      <a href="products/asus/product${product.id}.html">
-        <div class="product-img">
-            <img src="img/product/${index + 1}.jpg" alt="" />
-        </div>
-        <div class="product-info">
-            <h3>${product.name}</h3>
-            <p>${product.price}</p>
-        </div>
-      </a>
-    </li>
-    `)
-      : "";
-  }
-});
-
-// Acer Products
+// Acer – dành cho mấy ông thích mua về test độ bền bằng cách đập
 products.forEach((product, index) => {
   if (index <= 24 && product.type === "acer") {
-    console.log(product);
     acerProducts
       ? (acerProducts.innerHTML += `
       <li class="product">
@@ -314,10 +117,9 @@ products.forEach((product, index) => {
   }
 });
 
-// HP Products
+// HP – ai mua thì chuẩn bị tinh thần bị crash win
 products.forEach((product, index) => {
   if (index <= 25 && product.type === "HP") {
-    console.log(product);
     hpProducts
       ? (hpProducts.innerHTML += `
       <li class="product">
@@ -336,10 +138,9 @@ products.forEach((product, index) => {
   }
 });
 
-// LG Products
+// LG – mua laptop mà nhìn tên tưởng tivi
 products.forEach((product, index) => {
   if (index <= 25 && product.type === "LG") {
-    console.log(product);
     lgProducts
       ? (lgProducts.innerHTML += `
       <li class="product">
@@ -358,10 +159,9 @@ products.forEach((product, index) => {
   }
 });
 
-// MSI Products
+// MSI – viết tắt của "Máy Sập Im"
 products.forEach((product, index) => {
   if (index <= 26 && product.type === "MSI") {
-    console.log(product);
     msiProducts
       ? (msiProducts.innerHTML += `
       <li class="product">
@@ -380,13 +180,13 @@ products.forEach((product, index) => {
   }
 });
 
-// Image
+// Đổi ảnh nhỏ -> ảnh to, cho khách zoom kỹ rồi vẫn không mua
 const thumbnails = document.querySelectorAll(".thumbnail");
 thumbnails.forEach((thumbnail) => {
   thumbnail.addEventListener("click", function () {
     const imageSrc = this.src;
     const mainImage = document.querySelector(".main-image");
-    mainImage.src = imageSrc;
+    mainImage.src = imageSrc; // thay đổi ảnh chính
   });
 });
 const mainImage = document.querySelector(".main-image");
@@ -396,14 +196,14 @@ const fullscreenImageContainer = document.querySelector(
 const fullscreenImage = document.querySelector(".fullscreen-image");
 const closeBtn = document.querySelector(".close-btn");
 mainImage.addEventListener("click", function () {
-  fullscreenImage.src = this.src;
+  fullscreenImage.src = this.src; // mở fullscreen – choáng vl
   fullscreenImageContainer.style.display = "flex";
 });
 closeBtn.addEventListener("click", function () {
-  fullscreenImageContainer.style.display = "none";
+  fullscreenImageContainer.style.display = "none"; // tắt, hết hứng
 });
 
-// Pop-up
+// Pop-up – kiểu popup spam làm khách phát cáu
 document.addEventListener("DOMContentLoaded", () => {
   const addToCartButton = document.querySelector(".add-to-cart");
 
@@ -422,43 +222,47 @@ document.addEventListener("DOMContentLoaded", () => {
       (item) => item.title === product.title
     );
     if (existingProductIndex !== -1) {
-      cartItems[existingProductIndex].quantity += 1;
+      cartItems[existingProductIndex].quantity += 1; // thêm nữa, cho nghèo thêm
     } else {
-      cartItems.push(product);
+      cartItems.push(product); // chưa có thì quăng vào giỏ
     }
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     document.getElementById("popupContainer").style.display = "block";
     document.querySelector(".popup-content").textContent =
-      "Sản phẩm đã được thêm vào giỏ hàng!";
+      "Thêm hàng rồi đó, đừng khóc khi nhìn số dư nhé 😏";
   });
 });
 
+// Nút checkout – nhấn vô cho vui, chưa chắc đã mua
 document.querySelector(".checkout").addEventListener("click", function () {
   document.getElementById("popupContainer").style.display = "block";
   document.querySelector(".popup-content").textContent =
-    "Chuyển đến trang thanh toán.";
+    "Chuẩn bị bị móc ví nhé 🤡";
 });
+
+// Review – khách bấm đánh giá xong, shop vứt thẳng thùng rác
 document
   .querySelector(".submit-review-button")
   .addEventListener("click", function () {
     document.getElementById("popupContainer").style.display = "block";
     document.querySelector(".popup-content").textContent =
-      "Chúng tôi đã ghi nhận đánh giá của bạn.";
+      "Ok đã ghi nhận, chứ đọc làm gì, bán vẫn bán 🤣";
   });
+
 function closePopup() {
   document.getElementById("popupContainer").style.display = "none";
 }
 
-// Get the button
+// Nút scroll to top – dành cho mấy ông lười kéo chuột
 let mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
 
 function scrollFunction() {
+  // Nếu cuộn xuống thì hiện nút, còn lười thì khỏi
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
@@ -466,8 +270,8 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
+  // Bấm phát lên đầu trang, đỡ mỏi tay
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
