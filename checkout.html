@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán đơn hàng</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+  </head>
+  <body>
+    <main>
+      <div class="checkout-container">
+        <!-- Đơn hàng -->
+        <div class="order-summary">
+          <h2>Đơn hàng của bạn</h2>
+          <ul class="order-items" id="order-items"></ul>
+          <div class="order-total">
+            Tổng tiền: <span id="order-total">0₫</span>
+          </div>
+
+          <!-- Thông tin khách hàng -->
+          <div class="customer-info">
+            <h3>Thông tin khách hàng</h3>
+            <input type="text" id="fullname" placeholder="Họ và tên" required />
+            <input type="tel" id="phone" placeholder="Số điện thoại" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <textarea
+              id="address"
+              rows="3"
+              placeholder="Địa chỉ giao hàng"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Thanh toán -->
+        <div class="payment-methods">
+          <h2>Chọn phương thức thanh toán</h2>
+          <div class="banks">
+            <div class="bank" data-bank="vcb">
+              <img src="img/bank/vcb.png" alt="VCB" />Vietcombank
+            </div>
+            <div class="bank" data-bank="tcb">
+              <img src="img/bank/tcb.png" alt="TCB" />Techcombank
+            </div>
+            <div class="bank" data-bank="mb">
+              <img src="img/bank/mb.png" alt="MB" />MB Bank
+            </div>
+            <div class="bank" data-bank="bidv">
+              <img src="img/bank/bidv.png" alt="BIDV" />BIDV
+            </div>
+            <div class="bank" data-bank="vp">
+              <img src="img/bank/vp.png" alt="VPB" />VPBank
+            </div>
+          </div>
+          <div class="ewallets">
+            <div class="ewallet" data-ewallet="momo">
+              <img src="img/bank/momo.png" alt="MoMo" />MoMo
+            </div>
+            <div class="ewallet" data-ewallet="zalopay">
+              <img src="img/bank/zalopay.png" alt="ZaloPay" />ZaloPay
+            </div>
+            <div class="ewallet" data-ewallet="vnpay">
+              <img src="img/bank/vnpay.png" alt="VNPay" />VNPay
+            </div>
+          </div>
+          <div class="qr-section" id="qr-section">
+            <img id="qr-img" src="img/bank/qr-demo.png" alt="QR Thanh toán" />
+            <div id="qr-content" style="margin: 8px 0; font-weight: bold"></div>
+            <div>Quét mã QR để thanh toán</div>
+          </div>
+          <button class="pay-btn" id="pay-btn">Xác nhận thanh toán</button>
+        </div>
+      </div>
+
+      <!-- Banner cảm ơn -->
+      <div id="thankyou-banner">
+        <div>
+          <h1>Cảm ơn quý khách!</h1>
+          <p>
+            Đơn hàng của bạn đã được ghi nhận.<br />Chúng tôi sẽ liên hệ xác
+            nhận và giao hàng sớm nhất.
+          </p>
+          <button onclick="window.location.href='index.html'">
+            Về trang chủ
+          </button>
+        </div>
+      </div>
+    </main>
+    
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

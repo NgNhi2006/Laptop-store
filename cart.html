@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giỏ Hàng</title>
     <link rel="icon" type="image/png" href="../../img/logo.png" />
     <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
     <script
       src="https://kit.fontawesome.com/b041ca492a.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <!-- HEADER -->
     <header class="main-header">
       <div class="top-bar">
         <div class="logo-search">
@@ -54,21 +49,11 @@
         <li class="dropdown">
           <a href="index.html"><i class="fa fa-laptop"></i> LAPTOP</a>
           <ul class="dropdown-content">
-            <li>
-              <a href="acer.html"><i class="fa fa-laptop"></i> Laptop Acer</a>
-            </li>
-            <li>
-              <a href="asus.html"><i class="fa fa-laptop"></i> Laptop Asus</a>
-            </li>
-            <li>
-              <a href="hp.html"><i class="fa fa-laptop"></i> Laptop HP</a>
-            </li>
-            <li>
-              <a href="lg.html"><i class="fa fa-laptop"></i> Laptop LG</a>
-            </li>
-            <li>
-              <a href="msi.html"><i class="fa fa-laptop"></i> Laptop MSI</a>
-            </li>
+            <li><a href="acer.html">Laptop Acer</a></li>
+            <li><a href="asus.html">Laptop Asus</a></li>
+            <li><a href="hp.html">Laptop HP</a></li>
+            <li><a href="lg.html">Laptop LG</a></li>
+            <li><a href="msi.html">Laptop MSI</a></li>
           </ul>
         </li>
         <li>
@@ -80,14 +65,12 @@
       </ul>
     </header>
 
-    <div class="frame">
-      <div style="padding-top: 80px" class="frame">
-        <!-- Acer Product -->
-        <div class="nav-line-2">
-          <span>Giỏ hàng</span>
-        </div>
-        <ul class="acer-products"></ul>
+    <!-- CART -->
+    <main class="frame">
+      <div class="nav-line-2" style="padding-top: 80px">
+        <span>Giỏ hàng</span>
       </div>
+
       <div class="cart-container">
         <table class="cart-table">
           <thead>
@@ -102,15 +85,19 @@
           </thead>
           <tbody id="cart-items"></tbody>
         </table>
+
         <div class="cart-total">
           <h3>Tổng tiền: <span id="cart-total">0</span>₫</h3>
-          <button class="checkout">Thanh toán ngay</button>
+          <button class="checkout" onclick="goToCheckout()">
+            Thanh toán ngay
+          </button>
         </div>
       </div>
-    </div>
+    </main>
 
+    <!-- FOOTER -->
     <footer>
-      <div class="info" 0>
+      <div class="info">
         <h4>Thông Tin</h4>
         <div>
           <i class="fas fa-map-marker-alt"></i
@@ -121,7 +108,7 @@
         <div>
           <i class="fas fa-map-marker-alt"></i
           ><span class="info-text"
-            >Cơ sở 2: TDP 3, Phường Mỹ Độ, Thành Phố Bắc Giang</span
+            >Cơ sở 2: TDP 3, Phường Mỹ Độ, TP Bắc Giang</span
           >
         </div>
         <div>
@@ -133,6 +120,7 @@
           ><span class="info-text">Email: tniw.dev@gmail.com</span>
         </div>
       </div>
+
       <div class="policy">
         <h4>Chính Sách</h4>
         <a href="#"><div>Chính sách đổi trả hàng</div></a>
@@ -140,23 +128,21 @@
         <a href="#"><div>Hướng dẫn mua hàng</div></a>
         <a href="#"><div>Chính sách bảo mật</div></a>
       </div>
+
       <div class="fanpage">
         <h4 style="padding-bottom: 15px">Fanpage</h4>
         <iframe
-          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaptopstore.bg&tabs=timeline&width=340&height=209&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaptopstore.bg&tabs=timeline&width=340&height=209"
           width="340"
           height="209"
           style="border: none; overflow: hidden"
           scrolling="no"
           frameborder="0"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        >
-        </iframe>
+          allowfullscreen
+        ></iframe>
       </div>
     </footer>
 
-    <!-- JS -->
-    <script src="../../js/cart.js"></script>
+  <script src="js/cart.js"></script>
   </body>
 </html>

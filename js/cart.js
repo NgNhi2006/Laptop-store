@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotalElement = document.getElementById("cart-total");
-  const checkoutButton = document.querySelector(".checkout");
-
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
   const updateCartDisplay = () => {
@@ -10,67 +8,65 @@ document.addEventListener("DOMContentLoaded", () => {
     let cartTotal = 0;
 
     cartItems.forEach((item, index) => {
-      const itemTotal =
-        parseFloat(item.price.replace(/[^0-9-]+/g, "")) * item.quantity;
+      // Đảm bảo price là số
+      const price =
+        typeof item.price === "string"
+          ? parseInt(item.price.replace(/[^\d]/g, ""))
+          : item.price;
+      const itemTotal = price * item.quantity;
       cartTotal += itemTotal;
 
       const row = document.createElement("tr");
       row.innerHTML = `
-                <link rel="stylesheet" href="../../css/style.css" />
- 
-                <td><img src="${item.image}" alt="${
+              <td><img src="${item.img || item.image || ""}" alt="${
         item.title
-      }" class="cart-item-image"></td>
-                <td class="cart-item-title">${item.title}</td>
-                <td class="cart-item-price">${item.price}</td>
-                <td>
-                    <input type="number" value="${
-                      item.quantity
-                    }" data-index="${index}" class="item-quantity cart-item-quantity">
-                </td>
-                <td class="cart-item-total">${itemTotal.toLocaleString(
-                  "de-DE",
-                  { minimumFractionDigits: 0 }
-                )}₫</td>
-                <td><button class="remove-item cart-remove-button" data-index="${index}">Xóa</button></td>
+      }" class="cart-item-image" width="80"></td>
+              <td>${item.title}</td>
+              <td>${price ? price.toLocaleString("de-DE") : 0}₫</td>
+              <td><input type="number" value="${
+                item.quantity
+              }" data-index="${index}" class="item-quantity" min="1"></td>
+              <td>${itemTotal ? itemTotal.toLocaleString("de-DE") : 0}₫</td>
+              <td><button class="remove-item" data-index="${index}">Xóa</button></td>
             `;
       cartItemsContainer.appendChild(row);
     });
 
-    cartTotalElement.innerText = cartTotal.toLocaleString("de-DE", {
-      minimumFractionDigits: 0,
-    });
+    cartTotalElement.innerText = cartTotal
+      ? cartTotal.toLocaleString("de-DE")
+      : 0;
   };
 
+  // Cập nhật số lượng
   cartItemsContainer.addEventListener("change", (event) => {
     if (event.target.classList.contains("item-quantity")) {
-      const index = event.target.getAttribute("data-index");
-      const newQuantity = event.target.value;
-
-      cartItems[index].quantity = parseInt(newQuantity);
+      const index = event.target.dataset.index;
+      cartItems[index].quantity = parseInt(event.target.value) || 1;
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       updateCartDisplay();
     }
   });
 
+  // Xóa sản phẩm
   cartItemsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("remove-item")) {
-      const index = event.target.getAttribute("data-index");
-
+      const index = event.target.dataset.index;
       cartItems.splice(index, 1);
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       updateCartDisplay();
     }
   });
 
-  checkoutButton.addEventListener("click", () => {
-    alert(
-      "Thanh toán thành công! LAPTOP Oách Xà Lách Cảm Ơn Bạn Đã Tin Tưởng Mãi Iu "
-    );
-    localStorage.removeItem("cartItems");
-    cartItems = [];
-
-    updateCartDisplay();
-  });
   updateCartDisplay();
 });
+
+// Chuyển sang trang checkout + lưu tổng giỏ hàng
+function goToCheckout() {
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  if (cartItems.length === 0) {
+    alert("Giỏ hàng trống!");
+    return;
+  }
+  localStorage.setItem("checkoutItems", JSON.stringify(cartItems));
+  window.location.href = "../checkout.html";
+}

@@ -892,6 +892,80 @@ footer {
   background-color: #555;
 }
 
+/* Hiệu ứng 3D và hiệu ứng độc đáo đồng nhất toàn trang */
+button, .add-to-cart, .checkout, .confirm-btn, .cart-remove-button {
+  transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+  box-shadow: 0 4px 16px #007bff33;
+  will-change: transform;
+}
+button:hover, .add-to-cart:hover, .checkout:hover, .confirm-btn:hover, .cart-remove-button:hover {
+  transform: translateY(-4px) scale(1.07) perspective(400px) rotateX(6deg);
+  box-shadow: 0 12px 32px #007bff55, 0 2px 8px #00c6ff33;
+  filter: brightness(1.1);
+}
+.product, .new-product, .hot-products li, .asus-products li, .HP-products li, .LG-products li, .MSI-products li, .acer-products li {
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+  box-shadow: 0 2px 12px #007bff22;
+  background: linear-gradient(135deg, #f8fbff 60%, #e3f0ff 100%);
+  border-radius: 12px;
+  will-change: transform;
+}
+.product:hover, .new-product:hover, .hot-products li:hover, .asus-products li:hover, .HP-products li:hover, .LG-products li:hover, .MSI-products li:hover, .acer-products li:hover {
+  transform: scale(1.04) perspective(600px) rotateY(6deg) rotateX(2deg);
+  box-shadow: 0 16px 48px #007bff44, 0 4px 16px #00c6ff33;
+  z-index: 2;
+}
+.menu-items > li > a {
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px #007bff11;
+  will-change: transform;
+}
+.menu-items > li > a:hover {
+  transform: scale(1.08) perspective(400px) rotateX(4deg);
+  box-shadow: 0 8px 24px #007bff33;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff !important;
+}
+.product img, .new-product img, .hot-products img {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  will-change: transform;
+}
+.product:hover img, .new-product:hover img, .hot-products li:hover img {
+  transform: scale(1.12) rotateZ(-2deg);
+  box-shadow: 0 8px 32px #00c6ff44;
+}
+.popup-container .popup {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  box-shadow: 0 8px 32px #007bff44;
+  border-radius: 16px;
+}
+.popup-container .popup:hover {
+  transform: scale(1.03) perspective(400px) rotateY(3deg);
+  box-shadow: 0 16px 48px #007bff55;
+}
+input, textarea, select {
+  transition: box-shadow 0.2s, border 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 12px #00c6ff55;
+  border-color: #007bff;
+}
+.logo img {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  will-change: transform;
+}
+.logo:hover img {
+  transform: scale(1.13) rotate(-8deg);
+  box-shadow: 0 8px 32px #007bff44;
+}
+.banner img, .news img {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.banner img:hover, .news img:hover {
+  transform: scale(1.08) rotateY(6deg);
+  box-shadow: 0 8px 32px #ffb34744;
+}
+
 /* Mobile */
 @media screen and (max-width: 768px) {
   body {
