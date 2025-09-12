@@ -17,7 +17,7 @@ const db = new sqlite3.Database("./users.db", (err) => {
   else console.log("✅ Connected to SQLite database");
 });
 
-// tạo bảng user nếu chưa có
+
 db.run(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
