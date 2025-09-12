@@ -160,96 +160,12 @@
       </h2>
 
       <div class="scroll-container">
-        <img
-          src="img/banner/sale-1.png"
-          alt="Cinque Terre"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-2.png"
-          alt="Forest"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-3.png"
-          alt="Northern Lights"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-4.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-5.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-1.png"
-          alt="Cinque Terre"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-2.png"
-          alt="Forest"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-3.png"
-          alt="Northern Lights"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-4.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-5.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-1.png"
-          alt="Cinque Terre"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-2.png"
-          alt="Forest"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-3.png"
-          alt="Northern Lights"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-4.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
-        <img
-          src="img/banner/sale-5.png"
-          alt="Mountains"
-          style="margin-right: 20px"
-          width="200px"
-        />
+        <!-- ảnh khuyến mãi -->
+        <img src="img/banner/sale-1.png" style="margin-right:20px" width="200px"/>
+        <img src="img/banner/sale-2.png" style="margin-right:20px" width="200px"/>
+        <img src="img/banner/sale-3.png" style="margin-right:20px" width="200px"/>
+        <img src="img/banner/sale-4.png" style="margin-right:20px" width="200px"/>
+        <img src="img/banner/sale-5.png" style="margin-right:20px" width="200px"/>
       </div>
       <!-- New Product -->
       <div class="ads">
@@ -351,5 +267,27 @@
     </footer>
     <!-- JS -->
     <script src="js/main.js"></script>
+
+    <!-- Thêm script xử lý đăng nhập -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const accountDiv = document.getElementById("account");
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (user) {
+          accountDiv.innerHTML = `
+            <span><i class="fa fa-user"></i> Xin chào, ${user.email}</span>
+            <button id="logoutBtn" style="margin-left:10px;cursor:pointer;background:red;color:white;padding:3px 6px;border:none;border-radius:5px;">Đăng xuất</button>
+          `;
+
+          document
+            .getElementById("logoutBtn")
+            .addEventListener("click", () => {
+              localStorage.removeItem("user");
+              window.location.reload();
+            });
+        }
+      });
+    </script>
   </body>
 </html>

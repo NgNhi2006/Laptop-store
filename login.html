@@ -172,8 +172,12 @@
       </div>
       <div class="policy">
         <h4>Chính Sách</h4>
-        <a href="privacypolicy/returnpolicy.html"><div>Chính sách đổi trả hàng</div></a>
-        <a href="../privacypolicy/warranty.html"><div>Chính sách bảo hành</div></a>
+        <a href="privacypolicy/returnpolicy.html"
+          ><div>Chính sách đổi trả hàng</div></a
+        >
+        <a href="../privacypolicy/warranty.html"
+          ><div>Chính sách bảo hành</div></a
+        >
         <a href="link-trang"><div>Hướng dẫn mua hàng</div></a>
         <a href="privacypolicy/security.html"><div>Chính sách bảo mật</div></a>
       </div>
@@ -194,6 +198,25 @@
     </footer>
 
     <script>
+      const API_URL = "http://localhost:3000"; // server backend
+
+      // Hàm tạo toast
+      function showToast(message, type = "success") {
+        const toast = document.createElement("div");
+        toast.textContent = message;
+        toast.className = `toast ${type}`;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.add("show");
+        }, 100);
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }
+
       function toggleForm(formType) {
         if (formType === "login") {
           document.querySelector(".login-form").style.display = "block";
@@ -205,64 +228,113 @@
       }
 
       // Đăng ký
-      function registerUser() {
+      async function registerUser() {
         const email = document.getElementById("registerEmail").value.trim();
         const password = document.getElementById("registerPassword").value;
         const rePassword = document.getElementById("registerRePassword").value;
 
         if (!email || !password || !rePassword) {
-          alert("Vui lòng nhập đầy đủ thông tin!");
+          showToast("⚠️ Vui lòng nhập đầy đủ thông tin!", "error");
           return;
         }
 
         if (password !== rePassword) {
-          alert("Mật khẩu không khớp!");
+          showToast("⚠️ Mật khẩu không khớp!", "error");
           return;
         }
 
-        let users = JSON.parse(localStorage.getItem("users")) || [];
+        try {
+          const res = await fetch(`${API_URL}/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: email, password }),
+          });
 
-        if (users.some((u) => u.email === email)) {
-          alert("Email đã được đăng ký!");
-          return;
+          const data = await res.json();
+          if (res.ok) {
+            showToast("✅ Đăng ký thành công! Mời bạn đăng nhập.");
+            toggleForm("login");
+          } else {
+            showToast("❌ " + (data.error || "Lỗi không xác định!"), "error");
+          }
+        } catch (err) {
+          showToast("❌ Lỗi kết nối server!", "error");
+          console.error(err);
         }
-
-        users.push({ email, password });
-        localStorage.setItem("users", JSON.stringify(users));
-
-        alert("Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.");
-        toggleForm("login");
       }
 
       // Đăng nhập
-      function loginUser() {
+      async function loginUser() {
         const email = document.getElementById("loginEmail").value.trim();
         const password = document.getElementById("loginPassword").value;
 
         if (!email || !password) {
-          alert("Vui lòng nhập đầy đủ thông tin!");
+          showToast("⚠️ Vui lòng nhập đầy đủ thông tin!", "error");
           return;
         }
 
-        let users = JSON.parse(localStorage.getItem("users")) || [];
-        const user = users.find(
-          (u) => u.email === email && u.password === password
-        );
+        try {
+          const res = await fetch(`${API_URL}/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: email, password }),
+          });
 
-        if (user) {
-          alert("Đăng nhập thành công!");
-          window.location.href = "index.html"; // chuyển đến trang chủ
-        } else {
-          alert("Email hoặc mật khẩu không đúng!");
+          const data = await res.json();
+          if (res.ok) {
+            showToast("🎉 Đăng nhập thành công!");
+            setTimeout(() => {
+              window.location.href = "index.html";
+            }, 1200);
+          } else {
+            showToast(
+              "❌ " + (data.message || "Sai email hoặc mật khẩu!"),
+              "error"
+            );
+          }
+        } catch (err) {
+          showToast("❌ Lỗi kết nối server!", "error");
+          console.error(err);
         }
       }
 
       // Quên mật khẩu demo
       function forgotPassword() {
-        alert(
-          "Chức năng quên mật khẩu hiện tại chỉ là demo. Liên hệ admin để lấy lại mật khẩu."
-        );
+        showToast("ℹ️ Chức năng quên mật khẩu chưa hỗ trợ.", "info");
       }
     </script>
+
+    <style>
+      /* Toast style */
+      .toast {
+        position: fixed;
+        bottom: 20px;
+        right: -300px;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 9999;
+      }
+
+      .toast.show {
+        right: 20px;
+        opacity: 1;
+      }
+
+      .toast.success {
+        background: #28a745;
+      }
+      .toast.error {
+        background: #dc3545;
+      }
+      .toast.info {
+        background: #17a2b8;
+      }
+    </style>
   </body>
 </html>
