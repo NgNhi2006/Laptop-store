@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/warranty.css" />
+  <link rel="stylesheet" href="../css/warranty-check.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -221,7 +222,15 @@
         trước khi mang máy đến bảo hành. Chúng tôi không chịu trách nhiệm về
         việc mất dữ liệu trong quá trình kiểm tra, sửa chữa.
       </div>
-    </div>
+          <div class="warranty-check-section">
+        <h2>Kiểm tra bảo hành theo số Seri</h2>
+        <form class="warranty-check-form" id="warrantyForm" autocomplete="off">
+          <input type="text" id="serialInput" placeholder="Nhập số Seri hoặc IMEI..." maxlength="30" required />
+          <button type="submit">Kiểm tra</button>
+        </form>
+        <div id="warranty-result"></div>
+      </div>
+    </div>    
 
     <footer>
       <div class="info" 0>
@@ -271,12 +280,36 @@
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         >
         </iframe>
-      </div>
+      </div>     
     </footer>
     <!-- end footer -->
 
     <!-- JS -->
-
     <script src="js/main.js"></script>
+    <script>
+      // Demo: Danh sách seri hợp lệ (giả lập)
+      const validSerials = {
+        'ABC123456': { name: 'Laptop Asus VivoBook', warranty: 'Còn hạn đến 12/2025' },
+        'XYZ987654': { name: 'Laptop HP Pavilion', warranty: 'Hết hạn 08/2024' },
+        'SN2025VIP': { name: 'Laptop MSI Gaming', warranty: 'Còn hạn đến 03/2026' }
+      };
+      document.getElementById('warrantyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const serial = document.getElementById('serialInput').value.trim();
+        const resultDiv = document.getElementById('warranty-result');
+        if (!serial) {
+          resultDiv.textContent = 'Vui lòng nhập số Seri hoặc IMEI.';
+          resultDiv.className = 'error';
+          return;
+        }
+        if (validSerials[serial]) {
+          resultDiv.innerHTML = `<span class='success'>✔️ Sản phẩm: <b>${validSerials[serial].name}</b><br>Trạng thái bảo hành: <b>${validSerials[serial].warranty}</b></span>`;
+          resultDiv.className = 'success';
+        } else {
+          resultDiv.textContent = '❌ Số Seri không hợp lệ hoặc không tìm thấy. Vui lòng kiểm tra lại!';
+          resultDiv.className = 'error';
+        }
+      });
+    </script>
   </body>
 </html>
