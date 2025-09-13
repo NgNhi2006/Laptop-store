@@ -5,27 +5,45 @@ body {
   padding: 20px;
   background-color: #f4f4f4;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.content h1, .content h2, .content p {
+  text-align: center;
+}
+
 h1 {
   color: #007bff;
 }
+
 .step {
   background: white;
   padding: 20px;
   margin-bottom: 20px;
   border-left: 5px solid #007bff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
+
 img {
   max-width: 100%;
   margin-top: 10px;
   border: 1px solid #ddd;
 }
+
 .note {
   color: red;
   font-weight: bold;
 }
-
-/* anh nhi css button zalo */
 
 .zalo-btn {
   position: fixed;
@@ -41,6 +59,7 @@ img {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
+
 .zalo-btn:hover {
   background: #006edc;
 }
