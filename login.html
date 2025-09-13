@@ -282,7 +282,7 @@
 
           const data = await res.json();
           if (res.ok) {
-            localStorage.setItem('user', JSON.stringify(data.user));
+            localStorage.setItem("user", JSON.stringify(data.user));
             showToast("🎉 Đăng nhập thành công!");
             setTimeout(() => {
               window.location.href = "index.html";
