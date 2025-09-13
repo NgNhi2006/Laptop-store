@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts(products, "HP", ".HP-products");
       renderProducts(products, "LG", ".LG-products");
       renderProducts(products, "MSI", ".MSI-products");
+
     });
 
   function renderProducts(
@@ -57,21 +58,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     container.innerHTML = filteredProducts
-      .map(
-        (product) => `
-      <li class="product">
-        <a href="products/${product.type}/product${product.id}.html">
-          <div class="product-img">
-            <img src="img/product/${product.id}.jpg" alt="${product.name}" />
-          </div>
-          <div class="product-info">
-            <h3>${product.name}</h3>
-            <p>${product.price}</p>
-          </div>
-        </a>
-      </li>
-    `
-      )
+      .map((product) => {
+        const productUrl =
+          type === "new"
+            ? `products/NewProducts/product${product.id}.html`
+            : `products/${product.type}/product${product.id}.html`;
+        return `
+          <li class="product">
+            <a href="${productUrl}">
+              <div class="product-img">
+                <img src="img/product/${product.id}.jpg" alt="${product.name}" />
+              </div>
+              <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.price}</p>
+              </div>
+            </a>
+          </li>
+        `;
+      })
       .join("");
   }
 

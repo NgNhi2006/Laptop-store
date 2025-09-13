@@ -1980,3 +1980,70 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 8px 24px #007bff44;
   transform: scale(1.08);
 }
+/* account css */
+body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      body.dark-mode .main-header,
+      body.dark-mode footer {
+        background-color: #1e1e1e;
+      }
+
+      body.dark-mode .product-info h3,
+      body.dark-mode .product-info p {
+        color: #ffffff;
+      }
+
+      #account .user-info {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      #account .user-info:hover {
+        background-color: #0056b3;
+      }
+
+      .dropdown-content-account {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .dropdown-content-account .dropdown-item {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown-content-account .dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      #account .user-info:hover .dropdown-content-account {
+        display: block;
+      }
