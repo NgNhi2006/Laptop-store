@@ -160,12 +160,11 @@
       </h2>
 
       <div class="scroll-container">
-        <!-- ảnh khuyến mãi -->
-        <img src="img/banner/sale-1.png" style="margin-right:20px" width="200px"/>
-        <img src="img/banner/sale-2.png" style="margin-right:20px" width="200px"/>
-        <img src="img/banner/sale-3.png" style="margin-right:20px" width="200px"/>
-        <img src="img/banner/sale-4.png" style="margin-right:20px" width="200px"/>
-        <img src="img/banner/sale-5.png" style="margin-right:20px" width="200px"/>
+        <img src="img/banner/sale-1.png" alt="Cinque Terre" style="margin-right: 20px" width="200px"/>
+        <img src="img/banner/sale-2.png" alt="Forest" style="margin-right: 20px" width="200px"/>
+        <img src="img/banner/sale-3.png" alt="Northern Lights" style="margin-right: 20px" width="200px"/>
+        <img src="img/banner/sale-4.png" alt="Mountains" style="margin-right: 20px" width="200px"/>
+        <img src="img/banner/sale-5.png" alt="Mountains" style="margin-right: 20px" width="200px"/>
       </div>
       <!-- New Product -->
       <div class="ads">
@@ -268,26 +267,122 @@
     <!-- JS -->
     <script src="js/main.js"></script>
 
-    <!-- Thêm script xử lý đăng nhập -->
+    <!-- Xử lý đăng nhập/đăng xuất -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      function renderAccount() {
         const accountDiv = document.getElementById("account");
         const user = JSON.parse(localStorage.getItem("user"));
 
         if (user) {
-          accountDiv.innerHTML = `
-            <span><i class="fa fa-user"></i> Xin chào, ${user.email}</span>
-            <button id="logoutBtn" style="margin-left:10px;cursor:pointer;background:red;color:white;padding:3px 6px;border:none;border-radius:5px;">Đăng xuất</button>
+          const displayName = user.username.includes("@")
+            ? user.username.split("@")[0]
+            : user.username;
+
+          let dropdownHTML = `
+            <div class="dropdown-item" onclick="location.href='#'">Tài khoản của tôi</div>
+            <div class="dropdown-item" id="logoutBtn">Đăng xuất</div>
+            <div class="dropdown-item" id="darkModeToggle">Chế độ tối</div>
           `;
 
-          document
-            .getElementById("logoutBtn")
-            .addEventListener("click", () => {
-              localStorage.removeItem("user");
-              window.location.reload();
-            });
+          if (user.role === 'admin') {
+            dropdownHTML = `
+              <div class="dropdown-item" onclick="location.href='#'">Dashboard</div>
+            ` + dropdownHTML;
+          }
+
+          accountDiv.innerHTML = `
+            <div class="user-info">
+              <i class="fa fa-user"></i>
+              <span>${displayName}</span>
+              <div class="dropdown-content-account">
+                ${dropdownHTML}
+              </div>
+            </div>
+          `;
+
+          document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("user");
+            window.location.reload();
+          });
+
+          document.getElementById("darkModeToggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+          });
+        } else {
+          accountDiv.innerHTML = `
+            <a href="login.html">
+              <i class="fa fa-user"></i> <span>Đăng nhập / Đăng ký</span>
+            </a>
+          `;
         }
-      });
+      }
+
+      document.addEventListener("DOMContentLoaded", renderAccount);
     </script>
+
+    <style>
+      body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      body.dark-mode .main-header,
+      body.dark-mode footer {
+        background-color: #1e1e1e;
+      }
+
+      body.dark-mode .product-info h3,
+      body.dark-mode .product-info p {
+        color: #ffffff;
+      }
+
+      #account .user-info {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      #account .user-info:hover {
+        background-color: #0056b3;
+      }
+
+      .dropdown-content-account {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .dropdown-content-account .dropdown-item {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown-content-account .dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      #account .user-info:hover .dropdown-content-account {
+        display: block;
+      }
+    </style>
   </body>
 </html>
