@@ -1996,54 +1996,86 @@ body.dark-mode {
         color: #ffffff;
       }
 
-      #account .user-info {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        background-color: #007bff;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
+/* User Info Dropdown */
+.user-info {
+    position: relative;
+    display: inline-block;
+}
 
-      #account .user-info:hover {
-        background-color: #0056b3;
-      }
+.user-info > span {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
 
-      .dropdown-content-account {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
-        overflow: hidden;
-        animation: fadeIn 0.3s;
-      }
+.user-info:hover > span {
+    background-color: #0056b3;
+}
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    right: 0;
+}
 
-      .dropdown-content-account .dropdown-item {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease;
-      }
+.user-info:hover .user-dropdown-content {
+    display: block;
+}
 
-      .dropdown-content-account .dropdown-item:hover {
-        background-color: #f1f1f1;
-      }
+.user-dropdown-content p {
+    color: black;
+    padding: 8px 0;
+    margin: 0;
+}
 
-      #account .user-info:hover .dropdown-content-account {
-        display: block;
-      }
+.user-dropdown-content button {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.deposit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.deposit-btn:hover {
+    background-color: #218838;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login p {
+    margin: 0;
+}
+}

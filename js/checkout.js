@@ -51,10 +51,8 @@ document.querySelectorAll(".bank, .ewallet").forEach((el) => {
     this.classList.add("selected");
     selected = this;
 
-
     document.getElementById("qr-section").style.display = "block";
-    document.getElementById("qr-img").src = "img/bank/qrcode.jpg"; 
-
+    document.getElementById("qr-img").src = "img/bank/qrcode.jpg";
 
     qrContent = randomString(9);
     document.getElementById("qr-content").textContent =

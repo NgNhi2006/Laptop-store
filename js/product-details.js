@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const productImage = document.querySelector(".main-image").src;
 
       const product = {
-        id: Date.now(), // Simple unique ID
+        id: Date.now(),
         title: productTitle,
         price: productPrice.replace("Giá: ", ""),
         image: productImage,

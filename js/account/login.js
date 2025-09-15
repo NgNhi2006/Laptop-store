@@ -1,6 +1,5 @@
-const API_URL = "http://localhost:3000"; // server backend
+const API_URL = "http://localhost:3000"; // server
 
-// Hàm tạo toast
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
   toast.textContent = message;
@@ -96,7 +95,7 @@ async function loginUser() {
   }
 }
 
-// Quên mật khẩu demo
+// Quên mật khẩu
 function forgotPassword() {
-  showToast("ℹ️ Chức năng quên mật khẩu chưa hỗ trợ.", "info");
+  showToast("ℹ️ Chức năng quên mật khẩu chưa hỗ trợ liên hệ bộ phận hỗ trợ để được hỗ trợ.", "info");
 }

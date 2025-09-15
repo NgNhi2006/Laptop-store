@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // database
-const db = new sqlite3.Database('./users.db', (err) => {
+const db = new sqlite3.Database('../users.db', (err) => {
   if (err) console.error(err.message);
   else console.log('✅ Connected to SQLite database');
 });

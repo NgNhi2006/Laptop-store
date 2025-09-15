@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(nextImage, 3000);
   }
 
-  // Fetch and render products
   fetch("js/products.json")
     .then((response) => response.json())
     .then((products) => {
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts(products, "HP", ".HP-products");
       renderProducts(products, "LG", ".LG-products");
       renderProducts(products, "MSI", ".MSI-products");
-
     });
 
   function renderProducts(
@@ -80,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  // Scroll to top button
   const mybutton = document.getElementById("myBtn");
   if (mybutton) {
     window.onscroll = function () {

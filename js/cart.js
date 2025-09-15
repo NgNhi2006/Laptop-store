@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let cartTotal = 0;
 
     cartItems.forEach((item, index) => {
-      // Đảm bảo price là số
       const price =
         typeof item.price === "string"
           ? parseInt(item.price.replace(/[^\d]/g, ""))
