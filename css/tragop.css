@@ -74,6 +74,21 @@ form button:hover {
   background: #b71c1c;
 }
 
+#product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#product-price {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+#success-banner h2 {
+  color: #2ecc71;
+}
+
 @media (max-width: 768px) {
   .installment-container {
     grid-template-columns: 1fr;

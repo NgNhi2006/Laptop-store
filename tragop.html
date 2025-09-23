@@ -111,18 +111,21 @@
 
           <label for="product">Sản phẩm muốn mua:</label>
           <input type="text" id="product" name="product" required />
+          <div id="product-info" style="margin-top: 10px; display: none">
+            <img
+              id="product-image"
+              src=""
+              alt="Ảnh sản phẩm"
+              style="max-width: 100px; max-height: 100px"
+            />
+            <p id="product-price"></p>
+          </div>
 
           <label for="price">Giá sản phẩm (VNĐ):</label>
-          <input type="number" id="price" name="price" required />
+          <input type="text" id="price" name="price" required />
 
           <label for="confirm">Xác minh danh tính</label>
-          <input
-            type="file"
-            id="confirm"
-            name="confirm"
-            accept="image/*"
-            required
-          />
+          <input type="file" id="confirm" name="confirm" accept="image/*" />
           <img
             id="preview"
             style="margin-top: 10px; max-width: 100%; display: none"
@@ -143,6 +146,13 @@
 
           <button type="submit">Gửi đăng ký</button>
         </form>
+        <div
+          id="success-banner"
+          style="display: none; text-align: center; margin-top: 20px"
+        >
+          <h2>Cảm ơn bạn đã gửi!</h2>
+          <p>Ban quản lý sẽ xem xét yêu cầu của bạn.</p>
+        </div>
       </div>
     </div>
     <!-- footer -->
@@ -208,6 +218,48 @@
         }
       });
     </script>
-    <script src="js/account/auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const productInput = document.getElementById("product");
+        const productInfo = document.getElementById("product-info");
+        const productImage = document.getElementById("product-image");
+        const productPrice = document.getElementById("product-price");
+        const priceInput = document.getElementById("price");
+        const form = document.querySelector(".form-box form");
+        const successBanner = document.getElementById("success-banner");
+        const formBox = document.querySelector(".form-box");
+
+        let products = [];
+
+        fetch("js/products.json")
+          .then((response) => response.json())
+          .then((data) => {
+            products = data;
+          });
+
+        productInput.addEventListener("input", () => {
+          const productName = productInput.value.toLowerCase();
+          const product = products.find((p) =>
+            p.name.toLowerCase().includes(productName)
+          );
+
+          if (product) {
+            productInfo.style.display = "block";
+            productImage.src = `img/product/${product.id}.jpg`;
+            productPrice.textContent = `Giá: ${product.price}`;
+            priceInput.value = product.price.replace(/[^0-9]/g, "");
+          } else {
+            productInfo.style.display = "none";
+            priceInput.value = "";
+          }
+        });
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          form.style.display = "none";
+          successBanner.style.display = "block";
+        });
+      });
+    </script>
   </body>
 </html>
