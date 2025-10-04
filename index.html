@@ -1,17 +1,39 @@
+<!--
+========================================
+TRANG CHỦ - INDEX.HTML
+========================================
+Mục đích: Trang chủ của website bán laptop, hiển thị tất cả sản phẩm và thông tin quan trọng
+Cấu trúc:
+- Header: Logo, search bar, menu navigation, giỏ hàng
+- Banner: Slider hình ảnh quảng cáo
+- Products: Danh sách sản phẩm theo từng loại
+- News: Tin tức và khuyến mãi
+- Footer: Thông tin liên hệ và links
+- Chatbot: Hỗ trợ khách hàng tự động
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laptop Oách Xà Lách</title>
-    <link rel="icon" type="image/png" href="img/logo.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Meta tags cơ bản -->
+    <meta charset="UTF-8" />                    <!-- Bảng mã ký tự UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design -->
+    <title>Laptop Oách Xà Lách</title>         <!-- Tiêu đề trang -->
+    <link rel="icon" type="image/png" href="img/logo.png" /> <!-- Favicon -->
+    
+    <!-- CSS Files - Thứ tự quan trọng -->
+    <link rel="stylesheet" href="css/style.css" />           <!-- CSS chính -->
+    <link rel="stylesheet" href="css/components.css" />      <!-- CSS components -->
+    <link rel="stylesheet" href="css/chatbot.css" />         <!-- CSS chatbot -->
+    
+    <!-- Google Fonts - Tối ưu loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/b041ca492a.js"
       crossorigin="anonymous"
@@ -19,7 +41,24 @@
   </head>
 
   <body>
-    <!-- #007bff -->
+    <!-- 
+    ========================================
+    ACCESSIBILITY - SKIP LINK
+    ========================================
+    Mục đích: Giúp người dùng keyboard bỏ qua navigation để đến nội dung chính
+    Cách hoạt động: Ẩn mặc định, chỉ hiện khi focus (Tab key)
+    -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- 
+    ========================================
+    HEADER - THANH ĐIỀU HƯỚNG CHÍNH
+    ========================================
+    Mục đích: Chứa logo, search bar, menu navigation và giỏ hàng
+    Cấu trúc:
+    - Top bar: Logo + Search bar + Account links
+    - Menu bar: Navigation menu với dropdown
+    -->
     <header class="main-header">
       <div class="top-bar">
         <div class="logo-search">
@@ -43,7 +82,7 @@
             >
           </div>
           <div id="user-status-container">
-            <!-- This will be filled by js/account/auth.js -->
+            <!-- This will be filled by js/auth.js -->
           </div>
         </div>
       </div>
@@ -80,9 +119,25 @@
       </ul>
     </header>
 
+    <!-- 
+    ========================================
+    MAIN CONTENT - NỘI DUNG CHÍNH
+    ========================================
+    Mục đích: Chứa toàn bộ nội dung chính của trang
+    Cấu trúc:
+    - Banner: Slider hình ảnh quảng cáo
+    - Products: Danh sách sản phẩm theo loại
+    - News: Tin tức và khuyến mãi
+    -->
     <div class="frame">
-      <!-- Banner -->
-      <div class="banner">
+      <!-- 
+      ========================================
+      BANNER - SLIDER QUẢNG CÁO
+      ========================================
+      Mục đích: Hiển thị hình ảnh quảng cáo sản phẩm nổi bật
+      Cách hoạt động: JavaScript tự động chuyển hình mỗi 3 giây
+      -->
+      <div class="banner" id="main-content">
         <div class="banner-info">
           <img src="img/banner/banner111.jpg" alt="#" class="banner-image" />
           <img src="img/banner/banner222.jpg" alt="#" class="banner-image" />
@@ -230,9 +285,6 @@
       </div>
       <ul class="MSI-products"></ul>
     </div>
-    <div>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    </div>
     <footer>
       <div class="info" 0>
         <h4>Thông Tin</h4>
@@ -287,8 +339,19 @@
         </iframe>
       </div>
     </footer>
-    <!-- JS -->
-    <script src="js/main.js"></script>
+    <!-- 
+    ========================================
+    JAVASCRIPT FILES - TẢI SCRIPT
+    ========================================
+    Mục đích: Tải các file JavaScript để xử lý tương tác và logic
+    Thứ tự quan trọng:
+    - main.js: JavaScript chính (banner, products, cart)
+    - chatbot.js: JavaScript chatbot hỗ trợ
+    - auth.js: JavaScript authentication (login/register)
+    -->
+    <script src="js/main.js"></script>      <!-- JavaScript chính -->
+    <script src="js/chatbot.js"></script>   <!-- JavaScript chatbot -->
+    <script src="js/auth.js"></script>      <!-- JavaScript authentication -->
 
   </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Laptop Asus</title>
     <link rel="icon" type="image/png" href="../../img/logo.png" />
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/reviews.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -213,74 +214,141 @@
           <li><strong>Kích thước:</strong> 361.4 x 254.15 x 22.9 (mm)</li>
         </ul>
       </div>
-      <div class="nav-line-3">
-        <span>Đánh giá</span>
-      </div>
-      <div class="ratings-section">
-        <div class="rating-bar">
-          <div class="rating-label">5 &#9733;</div>
-          <div class="rating-meter">
-            <div class="rating-meter-fill" style="width: 80%"></div>
-          </div>
-          <div class="rating-count">100 đánh giá</div>
+      <div class="reviews-section">
+        <div class="reviews-header">
+          <h2 class="reviews-title">Đánh giá sản phẩm</h2>
+          <p class="reviews-subtitle">
+            Chia sẻ trải nghiệm của bạn về sản phẩm này
+          </p>
         </div>
-        <div class="rating-bar">
-          <div class="rating-label">4 &#9733;</div>
-          <div class="rating-meter">
-            <div class="rating-meter-fill" style="width: 60%"></div>
+        
+        <div class="overall-rating">
+          <div class="rating-summary">
+            <div class="rating-number">4.4</div>
+            <div class="rating-stars-display">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">☆</span>
+            </div>
+            <div class="rating-count">20 đánh giá</div>
           </div>
-          <div class="rating-count">50 đánh giá</div>
+          <div class="rating-breakdown">
+            <div class="rating-item">
+              <span class="rating-label">5</span>
+              <div class="rating-meter">
+                <div class="rating-meter-fill" style="width: 65%"></div>
+              </div>
+              <span class="rating-count-item">13</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">4</span>
+              <div class="rating-meter">
+                <div class="rating-meter-fill" style="width: 25%"></div>
+              </div>
+              <span class="rating-count-item">5</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">3</span>
+              <div class="rating-meter">
+                <div class="rating-meter-fill" style="width: 10%"></div>
+              </div>
+              <span class="rating-count-item">2</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">2</span>
+              <div class="rating-meter">
+                <div class="rating-meter-fill" style="width: 0%"></div>
+              </div>
+              <span class="rating-count-item">0</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-label">1</span>
+              <div class="rating-meter">
+                <div class="rating-meter-fill" style="width: 0%"></div>
+              </div>
+              <span class="rating-count-item">0</span>
+            </div>
+          </div>
         </div>
-        <div class="rating-bar">
-          <div class="rating-label">3 &#9733;</div>
-          <div class="rating-meter">
-            <div class="rating-meter-fill" style="width: 40%"></div>
-          </div>
-          <div class="rating-count">20 đánh giá</div>
+
+        <div class="review-form">
+          <h3>Đánh giá sản phẩm</h3>
+          <form id="review-form">
+            <div class="form-group">
+              <label>Đánh giá của bạn *</label>
+              <div class="rating-input">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 sao">★</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 sao">★</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 sao">★</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 sao">★</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 sao">★</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="review">Nhận xét của bạn *</label>
+              <textarea name="review" id="review" class="form-control" 
+                        placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm này..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="name">Họ và tên *</label>
+              <input type="text" name="name" id="name" class="form-control" 
+                     placeholder="Nhập họ và tên của bạn" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" name="email" id="email" class="form-control" 
+                     placeholder="Nhập email của bạn" required>
+            </div>
+            
+            <button type="submit" class="submit-review-btn">
+              <i class="fa fa-paper-plane"></i> Gửi đánh giá
+            </button>
+          </form>
         </div>
-        <div class="rating-bar">
-          <div class="rating-label">2 &#9733;</div>
-          <div class="rating-meter">
-            <div class="rating-meter-fill" style="width: 20%"></div>
+
+        <div class="reviews-list">
+          <h3>Đánh giá từ khách hàng</h3>
+          
+          <div class="reviews-controls">
+            <div class="reviews-filter">
+              <button class="filter-btn active" data-filter="all">Tất cả</button>
+              <button class="filter-btn" data-filter="5">5 sao</button>
+              <button class="filter-btn" data-filter="4">4 sao</button>
+              <button class="filter-btn" data-filter="3">3 sao</button>
+              <button class="filter-btn" data-filter="2">2 sao</button>
+              <button class="filter-btn" data-filter="1">1 sao</button>
+            </div>
+            
+            <div class="reviews-sort">
+              <label>Sắp xếp:</label>
+              <select class="sort-select">
+                <option value="newest">Mới nhất</option>
+                <option value="oldest">Cũ nhất</option>
+                <option value="highest">Đánh giá cao</option>
+                <option value="lowest">Đánh giá thấp</option>
+                <option value="most_liked">Nhiều lượt thích</option>
+              </select>
+            </div>
           </div>
-          <div class="rating-count">10 đánh giá</div>
+          
+          <div class="reviews-container">
+            <!-- Reviews will be loaded here by JavaScript -->
+          </div>
+          
+          <div class="reviews-pagination">
+            <!-- Pagination will be loaded here by JavaScript -->
+          </div>
         </div>
-        <div class="rating-bar">
-          <div class="rating-label">1 &#9733;</div>
-          <div class="rating-meter">
-            <div class="rating-meter-fill" style="width: 10%"></div>
-          </div>
-          <div class="rating-count">5 đánh giá</div>
-        </div>
-      </div>
-      <div class="rating-form">
-        <h3 class="review-heading">Đánh giá sản phẩm</h3>
-        <form action="#" method="post" id="review-form">
-          <div class="rating-stars">
-            <input type="radio" id="star5" name="rating" value="5" />
-            <label for="star5" title="5 sao"></label>
-            <input type="radio" id="star4" name="rating" value="4" />
-            <label for="star4" title="4 sao"></label>
-            <input type="radio" id="star3" name="rating" value="3" />
-            <label for="star3" title="3 sao"></label>
-            <input type="radio" id="star2" name="rating" value="2" />
-            <label for="star2" title="2 sao"></label>
-            <input type="radio" id="star1" name="rating" value="1" />
-            <label for="star1" title="1 sao"></label>
-          </div>
-          <textarea
-            name="review"
-            id="review"
-            cols="30"
-            rows="5"
-            placeholder="Nhận xét của bạn"
-          ></textarea>
-          <input type="text" name="name" id="name" placeholder="Họ và tên" />
-          <input type="email" name="email" id="email" placeholder="Email" />
-          <button type="submit" class="submit-review-button">
-            Gửi đánh giá
-          </button>
-        </form>
       </div>
     </div>
 
@@ -333,5 +401,9 @@
     <!-- JS -->
     <script src="../../js/main.js"></script>
     <script src="../../js/product-details.js"></script>
-  </body>
+    <script src="../../js/update-product-specs.js"></script>
+    <script src="../../js/reviews.js"></script>
+      <script src="../../js/add-reviews-to-all-products.js"></script>
+    <script src="../../js/customer-reviews.js"></script>
+</body>
 </html>

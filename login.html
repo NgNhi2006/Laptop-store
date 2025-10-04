@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Laptop Store</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/b041ca492a.js" crossorigin="anonymous"></script>
+</head>
+<body class="login-page">
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="login-header">
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            <span>Về trang chủ</span>
+        </a>
+        <div class="header-logo">
+            <img src="img/logo1.png" alt="Laptop Store" class="logo-img">
+            <span class="logo-text">Laptop Store</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="login-container">
+        <!-- Left Side - Hero Section -->
+        <div class="login-hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Được tin tưởng bởi 100,000+ khách hàng</span>
+                </div>
+                <h1 class="hero-title">
+                    Chào mừng trở lại
+                    <span class="gradient-text">Laptop Store</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Đăng nhập để khám phá thế giới công nghệ tuyệt vời và trải nghiệm dịch vụ mua sắm hàng đầu
+                </p>
+                
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Bảo mật tuyệt đối</h3>
+                            <p>Dữ liệu của bạn được mã hóa và bảo vệ an toàn</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Giao hàng siêu tốc</h3>
+                            <p>Miễn phí vận chuyển toàn quốc trong 24h</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Hỗ trợ 24/7</h3>
+                            <p>Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="login-form-section">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>Đăng nhập tài khoản</h2>
+                    <p>Nhập thông tin để truy cập tài khoản của bạn</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email hoặc số điện thoại</label>
+                        <div class="input-container">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="text" id="email" name="email" class="form-input" placeholder="Nhập email hoặc số điện thoại" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mật khẩu</label>
+                        <div class="input-container">
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Nhập mật khẩu" required>
+                            <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        <span class="button-text">Đăng nhập</span>
+                        <div class="button-loader">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+
+                    <div class="divider">
+                        <span>Hoặc đăng nhập với</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-button google">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="social-button facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        <p>Chưa có tài khoản? <a href="register.html" class="register-link">Đăng ký ngay</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

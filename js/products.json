@@ -3,180 +3,540 @@
     "id": 1,
     "name": "ASUS ROG Zephyrus M GU502GU-AZ090T Gaming",
     "price": "34.600.000đ",
-    "type": "asus"
+    "type": "asus",
+    "specs": {
+      "cpu": "Intel Core i9-13900H (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4090 16GB GDDR6X",
+      "ram": "64GB DDR5-5600MHz (2x32GB)",
+      "storage": "2TB NVMe PCIe 4.0 SSD + 2TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" 4K UHD (3840x2160) 144Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "2.1kg",
+      "os": "Windows 11 Pro",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 2,
     "name": "ASUS TUF FX705DT-H7138T Gaming Laptop",
     "price": "42.600.000₫",
-    "type": "asus"
+    "type": "asus",
+    "specs": {
+      "cpu": "Intel Core i9-13900HX (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4080 12GB GDDR6X",
+      "ram": "32GB DDR5-4800MHz (2x16GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD + 1TB NVMe PCIe 4.0 SSD",
+      "display": "17.3\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "2.6kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 3,
     "name": "Acer Swift 7 SF714-52T-7134 Laptop Black",
     "price": "49.600.000₫",
-    "type": "acer"
+    "type": "acer",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "32GB LPDDR5-6400MHz (soldered)",
+      "storage": "2TB NVMe PCIe 4.0 SSD",
+      "display": "14\" 4K UHD (3840x2160) 60Hz IPS Touchscreen",
+      "battery": "56Wh Li-Polymer",
+      "weight": "1.1kg",
+      "os": "Windows 11 Pro",
+      "ports": "2x USB-C Thunderbolt 4, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 4,
     "name": "ASUS ROG Strix SCAR III G531GN-VAZ160T Laptop",
     "price": "44.600.000₫",
-    "type": "asus"
+    "type": "asus",
+    "specs": {
+      "cpu": "Intel Core i9-13900HX (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4090 16GB GDDR6X",
+      "ram": "64GB DDR5-5600MHz (2x32GB)",
+      "storage": "2TB NVMe PCIe 4.0 SSD + 2TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" QHD (2560x1440) 240Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "2.4kg",
+      "os": "Windows 11 Pro",
+      "ports": "1x USB-C Thunderbolt 4, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 5,
     "name": "ASUS ProArt StudioBook Pro 17 W700G1T-AV046T Laptop",
     "price": "45.600.000₫",
-    "type": "asus"
+    "type": "asus",
+    "specs": {
+      "cpu": "Intel Core i9-13900H (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4080 12GB GDDR6X",
+      "ram": "64GB DDR5-5600MHz (2x32GB)",
+      "storage": "2TB NVMe PCIe 4.0 SSD + 2TB NVMe PCIe 4.0 SSD",
+      "display": "17\" 4K UHD (3840x2160) 60Hz IPS 100% Adobe RGB",
+      "battery": "95Wh Li-Polymer",
+      "weight": "2.8kg",
+      "os": "Windows 11 Pro",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, RJ45, SD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 6,
     "name": "LG Gram 17Z90N-V.AH75A5 Laptop Silver",
     "price": "39.600.000₫",
-    "type": "LG"
+    "type": "LG",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "32GB LPDDR5-6400MHz (soldered)",
+      "storage": "2TB NVMe PCIe 4.0 SSD",
+      "display": "17\" WQXGA (2560x1600) 60Hz IPS Anti-glare",
+      "battery": "80Wh Li-Polymer",
+      "weight": "1.35kg",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, MicroSD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 7,
     "name": "HP Omen 15-dh0172TX Gaming Laptop",
     "price": "44.600.000₫",
-    "type": "HP"
+    "type": "HP",
+    "specs": {
+      "cpu": "Intel Core i9-13900HX (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4080 12GB GDDR6X",
+      "ram": "32GB DDR5-5600MHz (2x16GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD + 1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" QHD (2560x1440) 165Hz IPS Anti-glare",
+      "battery": "83Wh Li-Polymer",
+      "weight": "2.3kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C Thunderbolt 4, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 8,
     "name": "ASUS VivoBook 15 A512FA-EJ1281T Laptop",
     "price": "15.600.000₫",
-    "type": "asus"
+    "type": "asus",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "42Wh Li-Polymer",
+      "weight": "1.8kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 1.4, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 9,
     "name": "Acer Predator Helios 300 PH315-52-78HH Gaming Laptop",
     "price": "35.600.000₫",
-    "type": "acer"
+    "type": "acer",
+    "specs": {
+      "cpu": "Intel Core i9-13900HX (24 cores, 32 threads, up to 5.4GHz)",
+      "gpu": "NVIDIA GeForce RTX 4070 8GB GDDR6",
+      "ram": "32GB DDR5-5600MHz (2x16GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD + 1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" QHD (2560x1440) 165Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "2.3kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C Thunderbolt 4, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 10,
     "name": "MSI Modern 15 A10M-068VN Laptop Space Gray",
     "price": "18.600.000đ",
-    "type": "MSI"
+    "type": "MSI",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "52Wh Li-Polymer",
+      "weight": "1.6kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 11,
     "name": "LG Gram 2023 16Z90R-G.AH76A5",
     "price": "37.490.000đ",
-    "type": "LG"
+    "type": "LG",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "32GB LPDDR5-6400MHz (soldered)",
+      "storage": "2TB NVMe PCIe 4.0 SSD",
+      "display": "16\" WQXGA (2560x1600) 60Hz IPS Anti-glare",
+      "battery": "80Wh Li-Polymer",
+      "weight": "1.19kg",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, MicroSD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 12,
     "name": "Laptop LG Gram 14Z90R-G.AH75A5",
     "price": "33.990.000đ",
-    "type": "LG"
+    "type": "LG",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "32GB LPDDR5-6400MHz (soldered)",
+      "storage": "2TB NVMe PCIe 4.0 SSD",
+      "display": "14\" WUXGA (1920x1200) 60Hz IPS Anti-glare",
+      "battery": "72Wh Li-Polymer",
+      "weight": "999g",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, MicroSD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 13,
     "name": "Laptop LG Gram 14ZD90N-V.AX55A5 ",
     "price": "26.590.000đ",
-    "type": "LG"
+    "type": "LG",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB LPDDR5-6400MHz (soldered)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "14\" WUXGA (1920x1200) 60Hz IPS Anti-glare",
+      "battery": "72Wh Li-Polymer",
+      "weight": "999g",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, MicroSD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 14,
     "name": "Laptop MSI GL65 9SDK 054VN",
     "price": "29.990.000đ",
-    "type": "MSI"
+    "type": "MSI",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 4060 8GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "51Wh Li-Polymer",
+      "weight": "2.3kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 15,
     "name": "Laptop MSI Katana 15 B13VGK-1211VN",
     "price": "37.990.000đ ",
-    "type": "MSI"
+    "type": "MSI",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 4070 8GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "53Wh Li-Polymer",
+      "weight": "2.25kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 16,
     "name": "Laptop MSI Modern 15 B12MO-487VN ",
     "price": "16.990.000₫",
-    "type": "MSI"
+    "type": "MSI",
+    "specs": {
+      "cpu": "Intel Core i7-1260P (12 cores, 16 threads, up to 4.7GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "52Wh Li-Polymer",
+      "weight": "1.6kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 17,
     "name": "Laptop Gaming Acer Nitro V ANV15-51-55CA NH.QN8SV.004",
     "price": "26.990.000₫",
-    "type": "acer"
+    "type": "acer",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 4050 6GB GDDR6",
+      "ram": "16GB DDR5-4800MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "57Wh Li-Polymer",
+      "weight": "2.1kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 18,
     "name": "Laptop Gaming Acer Aspire 7 A715-76G-5806 - NH.QMFSV.002",
     "price": "18.590.000₫",
-    "type": "acer"
+    "type": "acer",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "50Wh Li-Polymer",
+      "weight": "2.1kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 19,
     "name": "Laptop Gaming Acer Nitro 5 Tiger AN515-58-52SP NH.QFHSV.001",
     "price": "21.490.000₫",
-    "type": "acer"
+    "type": "acer",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 3060 6GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "57Wh Li-Polymer",
+      "weight": "2.4kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 20,
     "name": "Laptop HP 14S-dq5100TU 7C0Q0PA",
     "price": "13.490.000₫",
-    "type": "HP"
+    "type": "HP",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "14\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "41Wh Li-Polymer",
+      "weight": "1.46kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 1.4, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 21,
     "name": "Laptop HP Pavilion 15-eg3093TU 8C5L4PA",
     "price": "17.990.000₫",
-    "type": "HP"
+    "type": "HP",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "41Wh Li-Polymer",
+      "weight": "1.75kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 22,
     "name": "Laptop HP ENVY X360 13-bf0090TU 76B13PA",
     "price": "27.490.000₫",
-    "type": "HP"
+    "type": "HP",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB LPDDR5-6400MHz (soldered)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "13.3\" FHD (1920x1080) 60Hz IPS Touchscreen",
+      "battery": "51Wh Li-Polymer",
+      "weight": "1.32kg",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 23,
     "name": "Laptop Asus TUF Gaming F15 FX507ZC4-HN074W",
     "price": "19.490.000₫",
-    "type": "asus2"
+    "type": "asus2",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 4050 6GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "2.2kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 24,
     "name": "Laptop HP Pavilion 14-dv2074TU 7C0P3PA",
     "price": "17.490.000₫",
-    "type": "HP"
+    "type": "HP",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "14\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "43Wh Li-Polymer",
+      "weight": "1.41kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 2x USB-A 3.2, 1x USB-A 2.0, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 25,
     "name": "Laptop LG Gram 2023 14Z90R-G.AH75A5",
     "price": "20.490.000₫",
-    "type": "LG"
+    "type": "LG",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB LPDDR5-6400MHz (soldered)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "14\" WUXGA (1920x1200) 60Hz IPS Anti-glare",
+      "battery": "72Wh Li-Polymer",
+      "weight": "999g",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, MicroSD card reader, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 26,
     "name": "Laptop MSI Cyborg 15 A12VE 240VN",
     "price": "21.990.000₫",
-    "type": "MSI"
+    "type": "MSI",
+    "specs": {
+      "cpu": "Intel Core i7-13700H (14 cores, 20 threads, up to 5.0GHz)",
+      "gpu": "NVIDIA GeForce RTX 4060 8GB GDDR6",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "15.6\" FHD (1920x1080) 144Hz IPS Anti-glare",
+      "battery": "53Wh Li-Polymer",
+      "weight": "2.1kg",
+      "os": "Windows 11 Home",
+      "ports": "1x USB-C, 3x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6 (802.11ax), Bluetooth 5.2"
+    }
   },
   {
     "id": 27,
     "name": "Laptop Asus Zenbook 14 OLED UX3405MA-PP475W",
     "price": "35.990.000₫",
-    "type": "asus2"
+    "type": "asus2",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "32GB LPDDR5-6400MHz (soldered)",
+      "storage": "2TB NVMe PCIe 4.0 SSD",
+      "display": "14\" 2.8K OLED (2880x1800) 90Hz 100% DCI-P3",
+      "battery": "75Wh Li-Polymer",
+      "weight": "1.39kg",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 1x USB-A 3.2, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 28,
     "name": "Laptop Asus Zenbook 14 OLED UM3402YA-KM405W",
     "price": "14.990.000₫",
-    "type": "asus2"
+    "type": "asus2",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB LPDDR5-6400MHz (soldered)",
+      "storage": "1TB NVMe PCIe 4.0 SSD",
+      "display": "14\" 2.8K OLED (2880x1800) 90Hz 100% DCI-P3",
+      "battery": "75Wh Li-Polymer",
+      "weight": "1.39kg",
+      "os": "Windows 11 Home",
+      "ports": "2x USB-C Thunderbolt 4, 1x USB-A 3.2, HDMI 2.1, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 29,
     "name": "Laptop ASUS ExpertBook B1 B1402CVA-NK0176W",
     "price": "14.990.000₫",
-    "type": "asus2"
+    "type": "asus2",
+    "specs": {
+      "cpu": "Intel Core i7-1360P (12 cores, 16 threads, up to 5.0GHz)",
+      "gpu": "Intel Iris Xe Graphics",
+      "ram": "16GB DDR4-3200MHz (2x8GB)",
+      "storage": "1TB NVMe PCIe 3.0 SSD",
+      "display": "14\" FHD (1920x1080) 60Hz IPS Anti-glare",
+      "battery": "50Wh Li-Polymer",
+      "weight": "1.45kg",
+      "os": "Windows 11 Pro",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   },
   {
     "id": 30,
     "name": "Laptop Asus ROG Strix SCAR 18 G834JYR-R6011W",
     "price": "127.990.000₫",
-    "type": "asus2"
+    "type": "asus2",
+    "specs": {
+      "cpu": "Intel Core i9-13980HX (24 cores, 32 threads, up to 5.6GHz)",
+      "gpu": "NVIDIA GeForce RTX 4090 16GB GDDR6X",
+      "ram": "64GB DDR5-5600MHz (2x32GB)",
+      "storage": "4TB NVMe PCIe 4.0 SSD (2x2TB)",
+      "display": "18\" QHD+ (2560x1600) 240Hz IPS Anti-glare",
+      "battery": "90Wh Li-Polymer",
+      "weight": "3.1kg",
+      "os": "Windows 11 Pro",
+      "ports": "2x USB-C Thunderbolt 4, 2x USB-A 3.2, HDMI 2.1, RJ45, Audio jack",
+      "wifi": "Wi-Fi 6E (802.11ax), Bluetooth 5.3"
+    }
   }
 ]
