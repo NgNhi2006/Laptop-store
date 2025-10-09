@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Demo - Laptop Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b041ca492a.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        .demo-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
+            border-color: #007bff;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .demo-buttons {
+            margin-top: 30px;
+        }
+        
+        .demo-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        
+        .demo-btn-primary {
+            background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+            color: white;
+        }
+        
+        .demo-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+        }
+        
+        .demo-btn-secondary {
+            background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+        
+        .demo-btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .demo-info {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .demo-info h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .demo-info p {
+            color: #333;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">🤖 Chatbot Demo</h1>
+        <p class="demo-subtitle">Trợ lý ảo hỗ trợ khách hàng thông minh</p>
+        
+        <div class="demo-features">
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <div class="feature-title">Chat Thông Minh</div>
+                <div class="feature-desc">Trả lời tự động các câu hỏi về sản phẩm, giá cả, bảo hành</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">Tư Vấn Chính Xác</div>
+                <div class="feature-desc">Phân tích nhu cầu và đưa ra gợi ý sản phẩm phù hợp</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👨‍💼</div>
+                <div class="feature-title">Kết Nối Nhân Viên</div>
+                <div class="feature-desc">Chuyển tiếp đến nhân viên tư vấn khi cần thiết</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Responsive</div>
+                <div class="feature-desc">Hoạt động mượt mà trên mọi thiết bị</div>
+            </div>
+        </div>
+        
+        <div class="demo-info">
+            <h3>🎉 Tính Năng Mới</h3>
+            <p>• Avatar nhân viên thực tế (Mạc Văn Khoa)</p>
+            <p>• Bảng thông tin kỹ thuật có thể thu gọn</p>
+            <p>• Liên kết trực tiếp Zalo, Hotline, Email</p>
+            <p>• Giao diện hiện đại và thân thiện</p>
+        </div>
+        
+        <div class="demo-buttons">
+            <button class="demo-btn demo-btn-primary" onclick="testChatbot()">
+                <i class="fas fa-comments"></i> Test Chatbot
+            </button>
+            <a href="index.html" class="demo-btn demo-btn-secondary">
+                <i class="fas fa-home"></i> Về Trang Chủ
+            </a>
+        </div>
+    </div>
+
+    <!-- Chatbot Scripts -->
+    <script src="js/chatbot-database.js"></script>
+    <script src="js/chatbot-support.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+    <script>
+        function testChatbot() {
+            if (window.chatbot) {
+                window.chatbot.openChatbot();
+                // Simulate support transfer after 3 seconds
+                setTimeout(() => {
+                    if (window.chatbot.support) {
+                        window.chatbot.support.initiateSupportTransfer();
+                    }
+                }, 3000);
+            } else {
+                alert('Chatbot đang khởi tạo, vui lòng thử lại sau 2 giây.');
+            }
+        }
+    </script>
+</body>
+</html>

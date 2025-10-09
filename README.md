@@ -1,4 +1,4 @@
-# 🖥️ Laptop Store - Hướng dẫn toàn diện
+# 🖥️ Laptop Store
 
 ## 📋 Mục lục
 1. [Giới thiệu tổng quan](#giới-thiệu-tổng-quan)
