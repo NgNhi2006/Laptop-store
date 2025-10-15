@@ -1,0 +1,143 @@
+/* chat.css - Floating chat widget styles */
+.chat-widget {
+  position: fixed;
+  /* sit closer to the very corner */
+  right: 12px;
+  bottom: 12px;
+  z-index: 2000;
+  display: flex;
+  /* reverse column so the chat window opens upward above the button */
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 12px;
+}
+.chat-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#0b74de 0%, #00a0ff 100%);
+  box-shadow: 0 8px 20px rgba(11,116,222,0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.chat-button:active { transform: scale(.96); }
+.chat-button:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 36px rgba(11,116,222,0.28); }
+.chat-button.active { transform: translateY(-6px) scale(1.03); box-shadow: 0 20px 60px rgba(11,116,222,0.32); }
+.chat-actions {
+  /* positioned absolutely so it doesn't affect layout when hidden */
+  position: absolute;
+  right: 84px; /* aligns next to button (button width + gap) */
+  bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  transform-origin: 100% 100%;
+  /* hidden visually and non-interactive by default */
+  opacity: 0;
+  transform: translateX(8px) scale(.96);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s cubic-bezier(.2,.9,.2,1);
+}
+
+.chat-actions.horizontal {
+  /* reveal in a smooth horizontal slide and make interactive */
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+.chat-action {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(11,116,222,0.08);
+  border: 1px solid #e6f0ff;
+  color: #0b74de;
+  font-size: 18px;
+}
+.chat-action.zalo { background: #0068ff; color: #fff; border-color: rgba(0,104,255,0.12); }
+.chat-action.zalo svg { display:block; }
+.chat-action.zalo svg circle { fill: currentColor; }
+.chat-action.zalo svg polyline { stroke: #fff; }
+.chat-action img { display:block; width:auto; height:18px }
+.chat-action.messenger { background: transparent; border-color: rgba(0,0,0,0.06); }
+
+.chat-action.zalo { background: linear-gradient(90deg,#0068FF,#007BFF); }
+.chat-action.messenger { background: linear-gradient(90deg,#006EF6,#0078FF); color:#fff }
+.chat-action.phone { background: linear-gradient(90deg,#09A4FF,#0B74DE); color:#fff }
+.chat-action img { height:20px }
+.chat-action.zalo a { display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:#fff; font-weight:700; text-decoration:none }
+.chat-action.zalo a:hover { opacity:.95 }
+.chat-window {
+  width: 340px;
+  max-width: calc(100vw - 56px);
+  height: 460px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(2,6,23,0.18);
+  overflow: hidden;
+  /* fix to bottom-right corner so the window appears down in the corner */
+  position: fixed;
+  right: 12px;
+  bottom: 84px; /* sits above the button area */
+  transform: translateY(12px) scale(.98);
+  opacity: 0;
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .18s ease, box-shadow .22s ease, border-color .22s ease, bottom .18s ease;
+  display: flex;
+  flex-direction: column;
+}
+.chat-window.open {
+  /* slide up into view and show a stronger professional shadow */
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  box-shadow: 0 30px 70px rgba(2,6,23,0.28);
+  border: 1px solid rgba(11,116,222,0.06);
+  bottom: 84px;
+}
+.chat-header {
+  background: linear-gradient(90deg,#0056b3 0%,#0b74de 100%);
+  color: #fff;
+  padding: 12px 14px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.chat-header .avatar {
+  width:44px;height:44px;border-radius:8px;background:#fff3;border:2px solid rgba(255,255,255,0.12);
+}
+.chat-header .meta {display:flex;flex-direction:column}
+.chat-header .meta .name {font-weight:700}
+.chat-messages {
+  flex:1; padding:14px; background: linear-gradient(180deg,#f7fbff 0%, #ffffff 100%); overflow:auto;
+  display:flex; flex-direction:column; gap:10px;
+}
+.msg {max-width:78%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.4}
+.msg { opacity: 0; transform: translateY(6px); }
+.msg.show { animation: msgIn .18s cubic-bezier(.2,.9,.2,1) forwards; }
+.msg.agent { background: #e9f3ff; color: #06325a; align-self:flex-start; border-bottom-left-radius:4px }
+.msg.user { background: linear-gradient(90deg,#0b74de,#0056b3); color:#fff; align-self:flex-end; border-bottom-right-radius:4px }
+.chat-input {
+  padding: 10px; border-top:1px solid #f1f5f9; display:flex; gap:8px; background:#fff;
+}
+.chat-input input { flex:1; padding:10px 12px; border-radius:8px; border:1px solid #e6eefc; outline:none }
+.chat-input button { padding:10px 12px; border-radius:8px; border:none; background:#0b74de; color:#fff; cursor:pointer }
+.chat-empty { color:#6b7280; font-size:13px; text-align:center; padding-top:18px }
+/* small screens */
+@media (max-width:420px){
+  .chat-window{ width: 92vw; height: 64vh; right: 4vw; left: 4vw; }
+  .chat-button{ width:56px;height:56px;font-size:22px }
+}
+
+@keyframes msgIn {
+  to { opacity: 1; transform: translateY(0); }
+}

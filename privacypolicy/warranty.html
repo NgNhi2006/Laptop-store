@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/warranty.css" />
   <link rel="stylesheet" href="../css/warranty-check.css" />
+  <link rel="stylesheet" href="../css/chat.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -284,7 +285,7 @@
     </footer>
     <!-- end footer -->
 
-    <!-- JS -->
+   
     <script src="js/main.js"></script>
     <script>
       // Demo: Danh sách seri hợp lệ (giả lập)
@@ -310,6 +311,105 @@
           resultDiv.className = 'error';
         }
       });
+    </script>
+    <!-- Chat widget -->
+    <div class="chat-widget" id="chatWidget">
+  <div class="chat-actions" id="chatActions">
+        <div class="chat-action phone" title="Gọi điện">
+          <a href="tel:0862744098" style="color:inherit;text-decoration:none"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="chat-action zalo" title="Zalo">
+          <a href="https://zalo.me/0862744098" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Zalo</a>
+        </div>
+        <div class="chat-action messenger" title="Messenger">
+          <a href="https://m.me/laptopstore.bg" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><i class="fab fa-facebook-messenger"></i></a>
+        </div>
+      </div>
+      <button class="chat-button" id="chatToggle" aria-label="Mở chat"><i class="fas fa-comment-alt"></i></button>
+
+      <div class="chat-window" id="chatWindow" aria-hidden="true">
+        <div class="chat-header">
+          <div class="avatar"><img src="../img/logo.png" alt="avatar" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/></div>
+          <div class="meta">
+              <div class="name">chuyên viên kỹ thuật Laptopstore</div>
+            <div class="status" style="font-size:12px;opacity:.9">Trực tuyến - phản hồi nhanh</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="msg agent">Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</div>
+          <div class="msg user">Máy tôi không khởi động được, có thể hỗ trợ không?</div>
+          <div class="msg agent">Bạn thử giữ nút nguồn 10s rồi bật lại chưa? Nếu vẫn không được, mang tới cửa hàng để kiểm tra phần cứng nhé.</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="Gõ tin nhắn..." />
+          <button id="chatSend">Gửi</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        const toggle = document.getElementById('chatToggle');
+        const windowEl = document.getElementById('chatWindow');
+        const actions = document.getElementById('chatActions');
+        const messages = document.getElementById('chatMessages');
+        const input = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('chatSend');
+
+        let open = false;
+
+        function openChat(){
+          windowEl.classList.add('open');
+          windowEl.setAttribute('aria-hidden','false');
+          actions.classList.add('horizontal');
+          open = true;
+          // scroll to bottom
+          setTimeout(()=> messages.scrollTop = messages.scrollHeight,120);
+        }
+        function closeChat(){
+          windowEl.classList.remove('open');
+          windowEl.setAttribute('aria-hidden','true');
+          actions.classList.remove('horizontal');
+          open = false;
+        }
+
+        toggle.addEventListener('click', ()=>{
+          if(!open) { openChat(); toggle.classList.add('active'); } else { closeChat(); toggle.classList.remove('active'); }
+          // small pulse animation
+          toggle.style.transform = 'scale(.98)';
+          setTimeout(()=> toggle.style.transform = '',120);
+        });
+
+        function pushMessage(text, who='user'){
+          const div = document.createElement('div');
+          div.className = 'msg ' + (who==='agent' ? 'agent' : 'user');
+          div.textContent = text;
+          messages.appendChild(div);
+          // trigger appearance animation
+          setTimeout(()=> div.classList.add('show'), 20);
+          messages.scrollTop = messages.scrollHeight;
+        }
+
+        // reveal any existing messages on load with a small stagger
+        document.querySelectorAll('#chatMessages .msg').forEach((m, i) => {
+          setTimeout(() => m.classList.add('show'), 80 * i);
+        });
+
+        sendBtn.addEventListener('click', ()=>{
+          const txt = input.value.trim();
+          if(!txt) return;
+          pushMessage(txt,'user');
+          input.value = '';
+          // fake agent reply
+          setTimeout(()=>{
+            pushMessage('Cám ơn bạn! Kỹ thuật viên đã nhận tin nhắn và sẽ phản hồi sớm.', 'agent');
+          },800 + Math.random()*800);
+        });
+
+        input.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter') sendBtn.click();
+        });
+      })();
     </script>
   </body>
 </html>
