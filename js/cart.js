@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       : 0;
   };
 
-  // Cập nhật số lượng
   cartItemsContainer.addEventListener("change", (event) => {
     if (event.target.classList.contains("item-quantity")) {
       const index = event.target.dataset.index;
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Xóa sản phẩm
   cartItemsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("remove-item")) {
       const index = event.target.dataset.index;
@@ -59,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartDisplay();
 });
 
-// Chuyển sang trang checkout + lưu tổng giỏ hàng
 function goToCheckout() {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   if (cartItems.length === 0) {

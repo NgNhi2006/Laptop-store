@@ -1,6 +1,4 @@
-/**
- * Chatbot Support - Live support transfer functionality
- */
+
 class ChatbotSupport {
   constructor(chatbot) {
     this.chatbot = chatbot;
@@ -8,31 +6,22 @@ class ChatbotSupport {
     this.supportAgent = null;
   }
 
-  /**
-   * Initiate support transfer
-   */
   initiateSupportTransfer() {
     if (this.isConnecting) {
       return;
     }
 
-    // Show connecting message
     this.chatbot.addBotMessage('🔄 Đang kết nối với nhân viên hỗ trợ...');
     
-    // Start connection process
     this.startConnection();
   }
 
-  /**
-   * Start connection process
-   */
   startConnection() {
     this.isConnecting = true;
     
-    // Simulate connecting to agent
     setTimeout(() => {
       this.isConnecting = false;
-      // Xác định đường dẫn hình ảnh dựa trên vị trí hiện tại
+      
       const currentPath = window.location.pathname;
       const isSubPage = currentPath.includes('/products/') || currentPath.includes('/news/') || currentPath.includes('/privacypolicy/');
       const avatarPath = isSubPage ? '../../img/Store-employee/mackhoa.jpg' : 'img/Store-employee/mackhoa.jpg';
@@ -46,24 +35,17 @@ class ChatbotSupport {
       
       this.chatbot.addBotMessage(`🎉 Đã kết nối với nhân viên tư vấn!\n\n👨‍💼 ${this.supportAgent.name} - ${this.supportAgent.title}\n📋 Ticket: ${this.generateTicketId()}\n\nNhân viên sẽ hỗ trợ bạn ngay bây giờ.`);
       
-      // Hiển thị thông tin nhân viên
       this.showAgentInfo();
       
     }, 3000);
   }
 
-  /**
-   * Generate ticket ID
-   */
   generateTicketId() {
     const timestamp = Date.now().toString(36);
     const random = Math.random().toString(36).substr(2, 5);
     return `TK-${timestamp}-${random}`.toUpperCase();
   }
 
-  /**
-   * Show agent information
-   */
   showAgentInfo() {
     const agentInfo = document.createElement('div');
     agentInfo.className = 'agent-info';
@@ -130,7 +112,6 @@ class ChatbotSupport {
       </div>
     `;
     
-    // Thêm CSS cho agent info
     const style = document.createElement('style');
     style.textContent = `
       .agent-card {
@@ -351,7 +332,6 @@ class ChatbotSupport {
     document.head.appendChild(style);
     document.getElementById('chatbotMessages').appendChild(agentInfo);
     
-    // Thêm function toggle vào window để có thể gọi từ onclick
     window.toggleContactDetails = function() {
       const details = document.getElementById('contactDetails');
       const header = document.querySelector('.contact-header');
@@ -369,11 +349,8 @@ class ChatbotSupport {
     };
   }
 
-  /**
-   * Send notification
-   */
   sendNotification(supportRequest) {
-    // Simulate sending notification to support team
+    
     console.log('Support request sent:', supportRequest);
   }
 }

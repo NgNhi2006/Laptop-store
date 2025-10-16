@@ -1,4 +1,3 @@
-/* Chatbot Styles */
 #chatbotContainer {
   position: fixed;
   bottom: 20px;
@@ -57,7 +56,6 @@
   transform: scale(0.95);
 }
 
-/* Pulse animation for attention */
 @keyframes pulse {
   0% {
     box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
@@ -74,7 +72,6 @@
   animation: pulse 2s infinite;
 }
 
-/* Floating animation */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -88,7 +85,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Glow effect */
 #chatbotToggle::after {
   content: '';
   position: absolute;
@@ -107,7 +103,6 @@
   opacity: 0.7;
 }
 
-/* Icon rotation on hover */
 #chatbotToggle:hover {
   transform: scale(1.15) rotate(5deg);
   box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
@@ -355,7 +350,6 @@
   }
 }
 
-/* Agent Info Styles */
 .agent-info {
   margin-top: 15px;
 }
@@ -404,7 +398,6 @@
   color: #4caf50;
 }
 
-/* Technical Info Styles */
 .technical-info {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
@@ -558,7 +551,6 @@
   box-shadow: 0 6px 20px rgba(108, 117, 125, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #chatbotWindow {
     width: 300px;

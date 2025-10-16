@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* anh nhi css */
 #content-text {
   max-width: 900px;
   margin: 100px auto 40px;
@@ -36,7 +35,6 @@
   margin-bottom: 8px;
 }
 
-/* ghim footer xuống cuối trình duyệt */
 body {
   display: flex;
   flex-direction: column;

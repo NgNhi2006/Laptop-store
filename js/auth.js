@@ -1,64 +1,38 @@
-/*
-========================================
-AUTHENTICATION JAVASCRIPT - AUTH.JS
-========================================
-Mục đích: Quản lý hệ thống đăng nhập, đăng ký và xác thực người dùng
-Cách hoạt động: Sử dụng Class-based approach để tổ chức code rõ ràng
-Chức năng chính:
-- Xử lý đăng nhập/đăng ký
-- Quản lý session người dùng
-- Validation form
-- Cập nhật UI theo trạng thái đăng nhập
-- Lưu trữ thông tin user trong LocalStorage
-*/
 
-// Class quản lý authentication
 class AuthManager {
   constructor() {
-    this.currentUser = null;              // Thông tin user hiện tại
-    this.init();                          // Khởi tạo khi tạo object
+    this.currentUser = null;              
+    this.init();                          
   }
 
-  // Khởi tạo tất cả chức năng
   init() {
-    this.bindEvents();                    // Gắn event listeners
-    this.checkAuthStatus();               // Kiểm tra trạng thái đăng nhập
-    this.updateUserStatus();              // Cập nhật UI theo trạng thái
+    this.bindEvents();                    
+    this.checkAuthStatus();               
+    this.updateUserStatus();              
   }
 
-  /* 
-  ========================================
-  BIND EVENTS - GẮN SỰ KIỆN
-  ========================================
-  Mục đích: Gắn các event listeners cho form đăng nhập, đăng ký và các input
-  Cách hoạt động: Tìm các element trong DOM và gắn event handler
-  */
   bindEvents() {
-    // Gắn sự kiện cho form đăng nhập
+    
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
       loginForm.addEventListener('submit', (e) => this.handleLogin(e));
     }
 
-    // Gắn sự kiện cho form đăng ký
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
       registerForm.addEventListener('submit', (e) => this.handleRegister(e));
     }
 
-    // Gắn sự kiện kiểm tra độ mạnh mật khẩu khi gõ
     const passwordInput = document.getElementById('password');
     if (passwordInput) {
       passwordInput.addEventListener('input', (e) => this.checkPasswordStrength(e.target.value));
     }
 
-    // Confirm password checker
     const confirmPasswordInput = document.getElementById('confirmPassword');
     if (confirmPasswordInput) {
       confirmPasswordInput.addEventListener('input', (e) => this.checkPasswordMatch());
     }
 
-    // Social login buttons
     const googleBtn = document.querySelector('.google-btn');
     if (googleBtn) {
       googleBtn.addEventListener('click', () => this.handleSocialLogin('google'));
@@ -73,7 +47,7 @@ class AuthManager {
   checkAuthStatus() {
     const user = this.getCurrentUser();
     if (user && (window.location.pathname.includes('login.html') || window.location.pathname.includes('register.html'))) {
-      // User is already logged in, redirect to home
+      
       window.location.href = 'index.html';
     }
   }
@@ -135,7 +109,6 @@ class AuthManager {
     this.updateUserStatus();
     this.showSuccess('Đăng xuất thành công!');
     
-    // Redirect to home if on auth pages
     if (window.location.pathname.includes('login.html') || window.location.pathname.includes('register.html')) {
       setTimeout(() => {
         window.location.href = 'index.html';
@@ -151,7 +124,6 @@ class AuthManager {
     const password = formData.get('password');
     const rememberMe = formData.get('rememberMe');
 
-    // Validate inputs
     if (!this.validateEmail(email) && !this.validatePhone(email)) {
       this.showError('Vui lòng nhập email hoặc số điện thoại hợp lệ');
       return;
@@ -162,11 +134,9 @@ class AuthManager {
       return;
     }
 
-    // Show loading
     const submitBtn = e.target.querySelector('.auth-btn');
     this.setLoading(submitBtn, true);
 
-    // Simulate API call
     setTimeout(() => {
       const user = this.authenticateUser(email, password);
       
@@ -197,7 +167,6 @@ class AuthManager {
     const address = formData.get('address');
     const agreeTerms = formData.get('agreeTerms');
 
-    // Validate inputs
     if (!firstName || !lastName) {
       this.showError('Vui lòng nhập đầy đủ họ và tên');
       return;
@@ -233,11 +202,9 @@ class AuthManager {
       return;
     }
 
-    // Show loading
     const submitBtn = e.target.querySelector('.auth-btn');
     this.setLoading(submitBtn, true);
 
-    // Simulate API call
     setTimeout(() => {
       const user = this.createUser({
         firstName,
@@ -310,7 +277,6 @@ class AuthManager {
     this.showInfo(`Đăng nhập với ${provider} đang được phát triển`);
   }
 
-  // Validation methods
   validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -325,7 +291,6 @@ class AuthManager {
     return password && password.length >= 6;
   }
 
-  // User management
   authenticateUser(email, password) {
     const users = this.getUsers();
     return users.find(user => 
@@ -337,7 +302,6 @@ class AuthManager {
   createUser(userData) {
     const users = this.getUsers();
     
-    // Check if email already exists
     if (users.find(user => user.email === userData.email)) {
       return null;
     }
@@ -379,7 +343,6 @@ class AuthManager {
     return JSON.parse(localStorage.getItem('laptopStoreUsers') || '[]');
   }
 
-  // UI helpers
   setLoading(button, loading) {
     if (loading) {
       button.classList.add('loading');
@@ -403,7 +366,7 @@ class AuthManager {
   }
 
   showNotification(message, type) {
-    // Remove existing notifications
+    
     const existing = document.querySelector('.auth-notification');
     if (existing) {
       existing.remove();
@@ -418,7 +381,6 @@ class AuthManager {
       </div>
     `;
 
-    // Add styles
     notification.style.cssText = `
       position: fixed;
       top: 20px;
@@ -434,7 +396,6 @@ class AuthManager {
 
     document.body.appendChild(notification);
 
-    // Auto remove after 5 seconds
     setTimeout(() => {
       if (notification.parentNode) {
         notification.style.animation = 'slideOutRight 0.3s ease-in';
@@ -448,7 +409,6 @@ class AuthManager {
   }
 }
 
-// Toggle password visibility
 function togglePassword(inputId) {
   const input = document.getElementById(inputId);
   const button = input.parentNode.querySelector('.toggle-password');
@@ -463,7 +423,6 @@ function togglePassword(inputId) {
   }
 }
 
-// Add CSS for notifications
 const notificationStyles = `
   @keyframes slideInRight {
     from {
@@ -498,12 +457,10 @@ const notificationStyles = `
   }
 `;
 
-// Add styles to head
 const styleSheet = document.createElement('style');
 styleSheet.textContent = notificationStyles;
 document.head.appendChild(styleSheet);
 
-// Initialize when DOM is loaded
 let authManager;
 document.addEventListener('DOMContentLoaded', () => {
   authManager = new AuthManager();

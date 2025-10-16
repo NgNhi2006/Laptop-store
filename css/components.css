@@ -1,6 +1,4 @@
-/* Components CSS - Organized by component type */
 
-/* Button Components */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -55,7 +53,6 @@
   color: var(--color-brand-primary);
 }
 
-/* Card Components */
 .card {
   background-color: var(--color-bg-primary);
   border-radius: var(--radius-lg);
@@ -85,7 +82,6 @@
   background-color: var(--color-bg-secondary);
 }
 
-/* Product Card */
 .product-card {
   background-color: var(--color-bg-primary);
   border-radius: var(--radius-lg);
@@ -136,7 +132,6 @@
   margin-top: var(--spacing-md);
 }
 
-/* Form Components */
 .form-group {
   margin-bottom: var(--spacing-lg);
 }
@@ -181,7 +176,6 @@
   margin-top: var(--spacing-xs);
 }
 
-/* Navigation Components */
 .nav-item {
   position: relative;
 }
@@ -206,7 +200,6 @@
   background-color: var(--color-bg-secondary);
 }
 
-/* Dropdown Components */
 .dropdown {
   position: relative;
 }
@@ -246,7 +239,6 @@
   color: var(--color-brand-primary);
 }
 
-/* Badge Components */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -278,7 +270,6 @@
   color: var(--color-text-white);
 }
 
-/* Alert Components */
 .alert {
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
@@ -310,7 +301,6 @@
   color: var(--color-brand-danger);
 }
 
-/* Loading Components */
 .spinner {
   width: 20px;
   height: 20px;
@@ -337,7 +327,6 @@
   color: var(--color-text-muted);
 }
 
-/* Responsive adjustments for components */
 @media (max-width: 768px) {
   .btn {
     padding: var(--spacing-sm) var(--spacing-md);

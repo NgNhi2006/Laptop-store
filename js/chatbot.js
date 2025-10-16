@@ -1,6 +1,4 @@
-/**
- * Chatbot Class - Main chatbot functionality
- */
+
 class Chatbot {
   constructor() {
     this.isOpen = false;
@@ -11,12 +9,9 @@ class Chatbot {
     this.init();
   }
 
-  /**
-   * Initialize chatbot
-   */
   init() {
     this.createChatbotHTML();
-    // Add small delay to ensure DOM is ready
+    
     setTimeout(() => {
       this.bindEvents();
       this.showWelcomeMessage();
@@ -24,9 +19,6 @@ class Chatbot {
     }, 100);
   }
 
-  /**
-   * Create chatbot HTML structure
-   */
   createChatbotHTML() {
     const chatbotHTML = `
       <div id="chatbotContainer">
@@ -62,16 +54,12 @@ class Chatbot {
     document.body.insertAdjacentHTML('beforeend', chatbotHTML);
   }
 
-  /**
-   * Bind event listeners
-   */
   bindEvents() {
     const toggle = document.getElementById('chatbotToggle');
     const close = document.getElementById('chatbotClose');
     const sendButton = document.getElementById('sendButton');
     const messageInput = document.getElementById('messageInput');
 
-    // Use more specific event handling
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -97,13 +85,11 @@ class Chatbot {
       }
     });
 
-    // Close chatbot when clicking outside (with delay to avoid conflicts)
     document.addEventListener('click', (e) => {
       setTimeout(() => {
         const chatbotContainer = document.getElementById('chatbotContainer');
         const quickActions = document.querySelector('.quick-actions');
         
-        // Don't close if clicking on quick actions or chatbot elements
         if (this.isOpen && 
             !chatbotContainer.contains(e.target) && 
             !quickActions?.contains(e.target)) {
@@ -113,9 +99,6 @@ class Chatbot {
     });
   }
 
-  /**
-   * Toggle chatbot open/close
-   */
   toggleChatbot() {
     console.log('Toggle clicked, current state:', this.isOpen);
     this.removeAnimations();
@@ -126,9 +109,6 @@ class Chatbot {
     }
   }
 
-  /**
-   * Open chatbot
-   */
   openChatbot() {
     const window = document.getElementById('chatbotWindow');
     const toggle = document.getElementById('chatbotToggle');
@@ -136,22 +116,17 @@ class Chatbot {
     window.style.display = 'flex';
     this.isOpen = true;
     
-    // Change icon to close icon
     toggle.innerHTML = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     `;
     
-    // Focus on input
     setTimeout(() => {
       document.getElementById('messageInput').focus();
     }, 100);
   }
 
-  /**
-   * Close chatbot
-   */
   closeChatbot() {
     const window = document.getElementById('chatbotWindow');
     const toggle = document.getElementById('chatbotToggle');
@@ -159,7 +134,6 @@ class Chatbot {
     window.style.display = 'none';
     this.isOpen = false;
     
-    // Change icon back to chat icon
     toggle.innerHTML = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.35 15.01 2.95 16.32L2 22L7.68 21.05C8.99 21.65 10.46 22 12 22C17.52 22 22 17.52 22 12S17.52 2 12 2ZM12 20C10.74 20 9.54 19.81 8.43 19.46L8 19.29L4.71 20L5.42 16.79L5.25 16.36C4.9 15.25 4.71 14.05 4.71 12.79C4.71 7.31 8.31 3.71 13.79 3.71C19.27 3.71 22.87 7.31 22.87 12.79C22.87 18.27 19.27 21.87 13.79 21.87H12Z" fill="currentColor"/>
@@ -169,9 +143,6 @@ class Chatbot {
     `;
   }
 
-  /**
-   * Send message
-   */
   sendMessage() {
     const input = document.getElementById('messageInput');
     const message = input.value.trim();
@@ -183,9 +154,6 @@ class Chatbot {
     }
   }
 
-  /**
-   * Add user message to chat
-   */
   addUserMessage(message) {
     const messagesContainer = document.getElementById('chatbotMessages');
     const messageDiv = document.createElement('div');
@@ -196,9 +164,6 @@ class Chatbot {
     this.scrollToBottom();
   }
 
-  /**
-   * Add bot message to chat
-   */
   addBotMessage(message) {
     const messagesContainer = document.getElementById('chatbotMessages');
     const messageDiv = document.createElement('div');
@@ -209,66 +174,52 @@ class Chatbot {
     this.scrollToBottom();
   }
 
-  /**
-   * Process user message and generate response
-   */
   processMessage(message) {
-    // Show typing indicator
+    
     this.showTypingIndicator();
     
-    // Simulate processing delay
     setTimeout(() => {
       this.hideTypingIndicator();
       
-      // Get response from database
       const response = this.database.findResponse(message);
       
       if (response) {
         this.addBotMessage(response.message);
         
-        // Show quick actions if available
         if (response.quickActions) {
           this.showQuickActionsForCategory(response.quickActions);
         }
       } else {
-        // Try to detect intent
+        
         const intent = this.detectIntent(message);
         this.handleIntent(intent, message);
       }
     }, 1000 + Math.random() * 1000);
   }
 
-  /**
-   * Detect user intent
-   */
   detectIntent(message) {
     const lowerMessage = message.toLowerCase();
     
-    // Greeting patterns
     if (lowerMessage.includes('xin chào') || lowerMessage.includes('hello') || 
         lowerMessage.includes('hi') || lowerMessage.includes('chào')) {
       return 'greeting';
     }
     
-    // Product inquiry patterns
     if (lowerMessage.includes('laptop') || lowerMessage.includes('máy tính') || 
         lowerMessage.includes('sản phẩm') || lowerMessage.includes('mua')) {
       return 'product_inquiry';
     }
     
-    // Support patterns
     if (lowerMessage.includes('hỗ trợ') || lowerMessage.includes('giúp') || 
         lowerMessage.includes('tư vấn') || lowerMessage.includes('chat')) {
       return 'support';
     }
     
-    // Price patterns
     if (lowerMessage.includes('giá') || lowerMessage.includes('tiền') || 
         lowerMessage.includes('rẻ') || lowerMessage.includes('đắt')) {
       return 'price';
     }
     
-    // Warranty patterns
     if (lowerMessage.includes('bảo hành') || lowerMessage.includes('warranty') || 
         lowerMessage.includes('sửa chữa')) {
       return 'warranty';
@@ -277,9 +228,6 @@ class Chatbot {
     return 'unknown';
   }
 
-  /**
-   * Handle detected intent
-   */
   handleIntent(intent, message) {
     switch (intent) {
       case 'greeting':
@@ -313,9 +261,6 @@ class Chatbot {
     }
   }
 
-  /**
-   * Show quick actions for a category
-   */
   showQuickActionsForCategory(category) {
     const quickActions = this.database.getQuickActions(category);
     if (quickActions && quickActions.length > 0) {
@@ -323,9 +268,6 @@ class Chatbot {
     }
   }
 
-  /**
-   * Show quick action buttons
-   */
   showQuickActions(actions) {
     const messagesContainer = document.getElementById('chatbotMessages');
     const actionsDiv = document.createElement('div');
@@ -347,22 +289,16 @@ class Chatbot {
     this.scrollToBottom();
   }
 
-  /**
-   * Handle quick action click
-   */
   handleQuickAction(action) {
     console.log('Quick action clicked:', action.text);
     
-    // Remove quick actions
     const quickActions = document.querySelector('.quick-actions');
     if (quickActions) {
       quickActions.remove();
     }
     
-    // Add user message
     this.addUserMessage(action.text);
     
-    // Handle specific actions
     if (action.action === 'live_chat') {
       this.support.initiateSupportTransfer();
     } else if (action.action === 'products') {
@@ -372,14 +308,11 @@ class Chatbot {
       this.addBotMessage('🛡️ Thông tin về chính sách bảo hành:');
       this.addBotMessage('• Bảo hành 12-24 tháng tùy sản phẩm\n• Hỗ trợ sửa chữa tại trung tâm\n• Đổi mới trong 7 ngày đầu\n• Bảo hành toàn cầu cho một số model');
     } else {
-      // Process as regular message
+      
       this.processMessage(action.text);
     }
   }
 
-  /**
-   * Show welcome message
-   */
   showWelcomeMessage() {
     setTimeout(() => {
       this.addBotMessage(this.database.getWelcomeMessage());
@@ -387,9 +320,6 @@ class Chatbot {
     }, 500);
   }
 
-  /**
-   * Show typing indicator
-   */
   showTypingIndicator() {
     const messagesContainer = document.getElementById('chatbotMessages');
     const typingDiv = document.createElement('div');
@@ -408,9 +338,6 @@ class Chatbot {
     this.scrollToBottom();
   }
 
-  /**
-   * Hide typing indicator
-   */
   hideTypingIndicator() {
     const typingIndicator = document.getElementById('typingIndicator');
     if (typingIndicator) {
@@ -418,26 +345,19 @@ class Chatbot {
     }
   }
 
-  /**
-   * Scroll to bottom of messages
-   */
   scrollToBottom() {
     const messagesContainer = document.getElementById('chatbotMessages');
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
-  /**
-   * Add floating animation to toggle button
-   */
   addFloatingAnimation() {
     const toggle = document.getElementById('chatbotToggle');
     if (toggle) {
-      // Add floating animation after 2 seconds
+      
       setTimeout(() => {
         toggle.classList.add('floating');
       }, 2000);
       
-      // Add pulse animation when user hasn't interacted
       setTimeout(() => {
         if (!this.isOpen) {
           toggle.classList.add('pulse');
@@ -446,9 +366,6 @@ class Chatbot {
     }
   }
 
-  /**
-   * Remove animations when user interacts
-   */
   removeAnimations() {
     const toggle = document.getElementById('chatbotToggle');
     if (toggle) {
@@ -457,7 +374,6 @@ class Chatbot {
   }
 }
 
-// Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   window.chatbot = new Chatbot();
 });

@@ -1,4 +1,4 @@
-// Customer Reviews System - Simple 5-star reviews
+
 class CustomerReviews {
   constructor() {
     this.reviews = this.getReviews();
@@ -130,18 +130,15 @@ class CustomerReviews {
   }
 
   addReviewsToPage() {
-    // Check if reviews already exist
+    
     if (document.querySelector('.customer-reviews')) {
       return;
     }
 
-    // Add CSS
     this.addCSS();
 
-    // Add HTML
     this.addHTML();
 
-    // Add JavaScript functionality
     this.addJS();
   }
 
@@ -159,7 +156,6 @@ class CustomerReviews {
   addHTML() {
     const reviewsHTML = this.generateReviewsHTML();
     
-    // Find the best place to insert reviews
     const footer = document.querySelector('footer');
     if (footer) {
       footer.insertAdjacentHTML('beforebegin', reviewsHTML);
@@ -220,12 +216,12 @@ class CustomerReviews {
   }
 
   addJS() {
-    // Add any additional JavaScript functionality if needed
+    
     this.addScrollAnimation();
   }
 
   addScrollAnimation() {
-    // Add scroll animation for review cards
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -235,7 +231,6 @@ class CustomerReviews {
       });
     }, { threshold: 0.1 });
 
-    // Apply animation to review cards
     setTimeout(() => {
       const reviewCards = document.querySelectorAll('.review-card');
       reviewCards.forEach((card, index) => {
@@ -248,8 +243,6 @@ class CustomerReviews {
   }
 }
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new CustomerReviews();
 });
-

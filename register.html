@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/b041ca492a.js" crossorigin="anonymous"></script>
 </head>
 <body class="login-page register-page">
-    <!-- Background Elements -->
+    
     <div class="bg-elements">
         <div class="bg-circle circle-1"></div>
         <div class="bg-circle circle-2"></div>
@@ -24,7 +24,6 @@
         <div class="bg-gradient"></div>
     </div>
 
-    <!-- Header -->
     <header class="login-header">
         <a href="index.html" class="back-home">
             <i class="fas fa-arrow-left"></i>
@@ -36,9 +35,8 @@
         </div>
     </header>
 
-    <!-- Main Container -->
     <div class="login-container">
-        <!-- Left Side - Hero Section -->
+        
         <div class="login-hero">
             <div class="hero-content">
                 <div class="hero-badge">
@@ -85,7 +83,6 @@
             </div>
         </div>
 
-        <!-- Right Side - Register Form -->
         <div class="login-form-section">
             <div class="form-card">
                 <div class="form-header">
@@ -98,18 +95,12 @@
                         <div class="form-group">
                             <label for="firstName" class="form-label">Họ</label>
                             <div class="input-container">
-                                <div class="input-icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
                                 <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Nhập họ" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastName" class="form-label">Tên</label>
                             <div class="input-container">
-                                <div class="input-icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
                                 <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Nhập tên" required>
                             </div>
                         </div>
@@ -118,9 +109,6 @@
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <div class="input-container">
-                            <div class="input-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
                             <input type="email" id="email" name="email" class="form-input" placeholder="Nhập email" required>
                         </div>
                     </div>
@@ -128,9 +116,6 @@
                     <div class="form-group">
                         <label for="phone" class="form-label">Số điện thoại</label>
                         <div class="input-container">
-                            <div class="input-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
                             <input type="tel" id="phone" name="phone" class="form-input" placeholder="Nhập số điện thoại" required>
                         </div>
                     </div>
@@ -138,9 +123,6 @@
                     <div class="form-group">
                         <label for="password" class="form-label">Mật khẩu</label>
                         <div class="input-container">
-                            <div class="input-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
                             <input type="password" id="password" name="password" class="form-input" placeholder="Nhập mật khẩu" required>
                             <button type="button" class="password-toggle" onclick="togglePassword('password')">
                                 <i class="fas fa-eye"></i>
@@ -157,9 +139,6 @@
                     <div class="form-group">
                         <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
                         <div class="input-container">
-                            <div class="input-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
                             <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Nhập lại mật khẩu" required>
                             <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
                                 <i class="fas fa-eye"></i>
@@ -170,9 +149,6 @@
                     <div class="form-group">
                         <label for="address" class="form-label">Địa chỉ</label>
                         <div class="input-container">
-                            <div class="input-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
                             <input type="text" id="address" name="address" class="form-input" placeholder="Nhập địa chỉ" required>
                         </div>
                     </div>
@@ -215,7 +191,6 @@
         </div>
     </div>
 
-    <!-- JS -->
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
 
@@ -229,4 +204,3 @@
     <script src="js/chatbot.js"></script>
 </body>
 </html>
-

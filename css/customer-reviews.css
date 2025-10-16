@@ -1,4 +1,4 @@
-/* Customer Reviews Section */
+
 .customer-reviews {
   margin: 40px 0;
   padding: 30px;
@@ -162,7 +162,6 @@
   font-size: 0.7rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .customer-reviews {
     margin: 20px 0;
@@ -204,4 +203,3 @@
     font-size: 1rem;
   }
 }
-

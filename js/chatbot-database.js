@@ -1,17 +1,14 @@
-/**
- * Chatbot Database - FAQ and responses management
- */
+
 class ChatbotDatabase {
   constructor() {
     this.faqs = [
-      // Greeting FAQs
+      
       {
         keywords: ['xin chào', 'hello', 'hi', 'chào', 'chào bạn'],
         message: '👋 Xin chào! Tôi là trợ lý ảo của cửa hàng laptop. Tôi có thể giúp bạn tìm hiểu về sản phẩm, giá cả, bảo hành và kết nối với nhân viên hỗ trợ.',
         quickActions: 'main'
       },
       
-      // Product FAQs
       {
         keywords: ['laptop gaming', 'máy chơi game', 'gaming laptop'],
         message: '🎮 Chúng tôi có nhiều laptop gaming chất lượng cao từ các thương hiệu như ASUS ROG, MSI, HP Omen. Bạn quan tâm đến cấu hình nào?',
@@ -28,7 +25,6 @@ class ChatbotDatabase {
         quickActions: 'graphics'
       },
       
-      // Brand FAQs
       {
         keywords: ['asus', 'asus laptop'],
         message: '🖥️ ASUS là thương hiệu uy tín với dòng ROG cho gaming và ZenBook cho văn phòng. Bạn quan tâm dòng nào?',
@@ -55,7 +51,6 @@ class ChatbotDatabase {
         quickActions: 'lg'
       },
       
-      // Price FAQs
       {
         keywords: ['giá rẻ', 'laptop rẻ', 'tầm 10 triệu', 'dưới 10 triệu'],
         message: '💰 Chúng tôi có nhiều laptop giá rẻ từ 8-12 triệu với cấu hình phù hợp cho văn phòng và học tập.',
@@ -67,7 +62,6 @@ class ChatbotDatabase {
         quickActions: 'premium'
       },
       
-      // Warranty FAQs
       {
         keywords: ['bảo hành', 'warranty', 'sửa chữa'],
         message: '🛡️ Chúng tôi cung cấp bảo hành chính hãng 12-24 tháng tùy sản phẩm. Hỗ trợ sửa chữa tại trung tâm bảo hành.',
@@ -79,7 +73,6 @@ class ChatbotDatabase {
         quickActions: 'return'
       },
       
-      // Support FAQs
       {
         keywords: ['hỗ trợ', 'tư vấn', 'giúp đỡ'],
         message: '🆘 Tôi có thể kết nối bạn với nhân viên tư vấn chuyên nghiệp. Bạn có muốn chat trực tiếp không?',
@@ -191,9 +184,6 @@ class ChatbotDatabase {
     };
   }
 
-  /**
-   * Find response for user message
-   */
   findResponse(message) {
     const lowerMessage = message.toLowerCase();
     
@@ -211,23 +201,14 @@ class ChatbotDatabase {
     return null;
   }
 
-  /**
-   * Get quick actions for category
-   */
   getQuickActions(category) {
     return this.quickActions[category] || [];
   }
 
-  /**
-   * Get welcome message
-   */
   getWelcomeMessage() {
     return '👋 Xin chào! Tôi là trợ lý ảo của cửa hàng laptop. Tôi có thể giúp bạn:\n\n• Tìm hiểu sản phẩm laptop\n• Tư vấn cấu hình phù hợp\n• Cung cấp thông tin giá cả\n• Hỗ trợ bảo hành\n• Kết nối với nhân viên tư vấn\n\nBạn cần hỗ trợ gì?';
   }
 
-  /**
-   * Get default response
-   */
   getDefaultResponse() {
     const responses = [
       '🤔 Tôi chưa hiểu rõ câu hỏi của bạn. Bạn có thể hỏi cụ thể hơn không?',

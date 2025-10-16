@@ -1,33 +1,18 @@
-<!--
-========================================
-TRANG CHỦ - INDEX.HTML
-========================================
-Mục đích: Trang chủ của website bán laptop, hiển thị tất cả sản phẩm và thông tin quan trọng
-Cấu trúc:
-- Header: Logo, search bar, menu navigation, giỏ hàng
-- Banner: Slider hình ảnh quảng cáo
-- Products: Danh sách sản phẩm theo từng loại
-- News: Tin tức và khuyến mãi
-- Footer: Thông tin liên hệ và links
-- Chatbot: Hỗ trợ khách hàng tự động
--->
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <!-- Meta tags cơ bản -->
-    <meta charset="UTF-8" />                    <!-- Bảng mã ký tự UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design -->
-    <title>Laptop Oách Xà Lách</title>         <!-- Tiêu đề trang -->
-    <link rel="icon" type="image/png" href="img/logo.png" /> <!-- Favicon -->
     
-    <!-- CSS Files - Thứ tự quan trọng -->
+    <meta charset="UTF-8" />                    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Laptop Oách Xà Lách</title>         
+    <link rel="icon" type="image/png" href="img/logo.png" /> 
+    
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/chatbot.css" />
-    <link rel="stylesheet" href="css/chatbot.css" />           <!-- CSS chính -->
-    <link rel="stylesheet" href="css/components.css" />      <!-- CSS components -->
-    <link rel="stylesheet" href="css/chatbot.css" />         <!-- CSS chatbot -->
+    <link rel="stylesheet" href="css/chatbot.css" />           
+    <link rel="stylesheet" href="css/components.css" />      
+    <link rel="stylesheet" href="css/chatbot.css" />         
     
-    <!-- Google Fonts - Tối ưu loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,7 +20,6 @@ Cấu trúc:
       rel="stylesheet"
     />
     
-    <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/b041ca492a.js"
       crossorigin="anonymous"
@@ -43,24 +27,9 @@ Cấu trúc:
   </head>
 
   <body>
-    <!-- 
-    ========================================
-    ACCESSIBILITY - SKIP LINK
-    ========================================
-    Mục đích: Giúp người dùng keyboard bỏ qua navigation để đến nội dung chính
-    Cách hoạt động: Ẩn mặc định, chỉ hiện khi focus (Tab key)
-    -->
+    
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <!-- 
-    ========================================
-    HEADER - THANH ĐIỀU HƯỚNG CHÍNH
-    ========================================
-    Mục đích: Chứa logo, search bar, menu navigation và giỏ hàng
-    Cấu trúc:
-    - Top bar: Logo + Search bar + Account links
-    - Menu bar: Navigation menu với dropdown
-    -->
     <header class="main-header">
       <div class="top-bar">
         <div class="logo-search">
@@ -84,7 +53,7 @@ Cấu trúc:
             >
           </div>
           <div id="user-status-container">
-            <!-- This will be filled by js/auth.js -->
+            
           </div>
         </div>
       </div>
@@ -121,24 +90,8 @@ Cấu trúc:
       </ul>
     </header>
 
-    <!-- 
-    ========================================
-    MAIN CONTENT - NỘI DUNG CHÍNH
-    ========================================
-    Mục đích: Chứa toàn bộ nội dung chính của trang
-    Cấu trúc:
-    - Banner: Slider hình ảnh quảng cáo
-    - Products: Danh sách sản phẩm theo loại
-    - News: Tin tức và khuyến mãi
-    -->
     <div class="frame">
-      <!-- 
-      ========================================
-      BANNER - SLIDER QUẢNG CÁO
-      ========================================
-      Mục đích: Hiển thị hình ảnh quảng cáo sản phẩm nổi bật
-      Cách hoạt động: JavaScript tự động chuyển hình mỗi 3 giây
-      -->
+      
       <div class="banner" id="main-content">
         <div class="banner-info">
           <img src="img/banner/banner111.jpg" alt="#" class="banner-image" />
@@ -246,7 +199,7 @@ Cấu trúc:
           width="200px"
         />
       </div>
-      <!-- New Product -->
+      
       <div class="ads">
         <div>
           <div class="nav-line">
@@ -256,32 +209,32 @@ Cấu trúc:
         </div>
         <img class="img-ads" src="img/product/ads.jpg" alt="" />
       </div>
-      <!-- Hot Product -->
+      
       <div class="nav-line-1">
         <span>HÀNG HOT</span>
       </div>
       <ul class="hot-products"></ul>
-      <!-- Acer Product -->
+      
       <div class="nav-line-1">
         <span>LAPTOP ACER</span>
       </div>
       <ul class="acer-products"></ul>
-      <!-- Asus Product -->
+      
       <div class="nav-line-1">
         <span>LAPTOP ASUS</span>
       </div>
       <ul class="asus-products"></ul>
-      <!-- HP Product -->
+      
       <div class="nav-line-1">
         <span>LAPTOP HP</span>
       </div>
       <ul class="HP-products"></ul>
-      <!-- LG Product -->
+      
       <div class="nav-line-1">
         <span>LAPTOP LG</span>
       </div>
       <ul class="LG-products"></ul>
-      <!-- MSI Product -->
+      
       <div class="nav-line-1">
         <span>LAPTOP MSI</span>
       </div>
@@ -341,21 +294,11 @@ Cấu trúc:
         </iframe>
       </div>
     </footer>
-    <!-- 
-    ========================================
-    JAVASCRIPT FILES - TẢI SCRIPT
-    ========================================
-    Mục đích: Tải các file JavaScript để xử lý tương tác và logic
-    Thứ tự quan trọng:
-    - main.js: JavaScript chính (banner, products, cart)
-    - chatbot.js: JavaScript chatbot hỗ trợ
-    - auth.js: JavaScript authentication (login/register)
-    -->
-    <script src="js/main.js"></script>      <!-- JavaScript chính -->
-    <script src="js/chatbot.js"></script>   <!-- JavaScript chatbot -->
-    <script src="js/auth.js"></script>      <!-- JavaScript authentication -->
+    
+    <script src="js/main.js"></script>      
+    <script src="js/chatbot.js"></script>   
+    <script src="js/auth.js"></script>      
 
-  
     <script src="js/chatbot-database.js"></script>
     <script src="js/chatbot.js"></script>
 
