@@ -1,14 +1,16 @@
-./privacypolicy/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laptop Oách Xà Lách</title>
     <link rel="icon" type="image/png" href="img/logo.png" />
+    <!-- CSS chung cho toàn site: layout, header/footer, grid -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/chatbot.css" />
     <link rel="stylesheet" href="css/chatbot.css" />
     <link rel="stylesheet" href="css/chatbot.css" />
+    <!-- CSS riêng cho trang Trả góp: màu sắc, form, box quy định -->
     <link rel="stylesheet" href="./css/tragop.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +26,7 @@
 
   <body>
     
+    <!-- HEADER: logo + ô tìm kiếm + hotline + giỏ hàng + menu điều hướng -->
     <header class="main-header">
       <div class="top-bar">
         <div class="logo-search">
@@ -83,11 +86,14 @@
         </li>
       </ul>
     </header>
+    <!-- TIÊU ĐỀ TRANG -->
     <h1>💳 Chương Trình Trả Góp 0% Lãi Suất</h1>
 
+    <!-- KHỐI NỘI DUNG TRẢ GÓP: bên trái là quy định, bên phải là form đăng ký -->
     <div class="installment-container">
       
       <div class="rules">
+        <!-- Box quy định/điều kiện trả góp để người dùng đọc nhanh -->
         <h2>Yêu cầu & Nội quy trả góp</h2>
         <ul>
           <li>
@@ -103,6 +109,7 @@
       </div>
 
       <div class="form-box">
+        <!-- Form đăng ký: thu thập thông tin cơ bản + xem trước sản phẩm theo gợi ý -->
         <h2>Đăng ký trả góp</h2>
         <form action="/submit_installment" method="post">
           <label for="name">Họ và tên:</label>
@@ -113,6 +120,7 @@
 
           <label for="product">Sản phẩm muốn mua:</label>
           <input type="text" id="product" name="product" required />
+          <!-- Khu vực hiển thị ảnh + giá sản phẩm khi người dùng gõ tên trùng dữ liệu -->
           <div id="product-info" style="margin-top: 10px; display: none">
             <img
               id="product-image"
@@ -128,6 +136,7 @@
 
           <label for="confirm">Xác minh danh tính</label>
           <input type="file" id="confirm" name="confirm" accept="image/*" />
+          <!-- Ảnh xem trước CCCD/CMND -->
           <img
             id="preview"
             style="margin-top: 10px; max-width: 100%; display: none"
@@ -158,6 +167,7 @@
       </div>
     </div>
     
+    <!-- FOOTER: thông tin cửa hàng + chính sách + fanpage -->
     <footer>
       <div class="info" 0>
         <h4>Thông Tin</h4>
@@ -212,6 +222,7 @@
         </iframe>
       </div>
     </footer>
+    <!-- SCRIPT: xem trước ảnh CCCD + gợi ý sản phẩm từ js/products.json + banner thành công -->
     <script>
       const input = document.getElementById("confirm");
       const preview = document.getElementById("preview");
